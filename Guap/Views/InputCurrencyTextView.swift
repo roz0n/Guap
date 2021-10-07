@@ -33,13 +33,15 @@ class InputCurrencyTextView: UITextView {
   
   private func configureTextView() {
     translatesAutoresizingMaskIntoConstraints = false
+    
+    font = UIFont.monospacedSystemFont(ofSize: K.Sizes.medText, weight: .bold)
     textContainer.maximumNumberOfLines = 3
     textContainer.lineBreakMode = .byTruncatingMiddle
+    textContainerInset = UIEdgeInsets(top: K.Sizes.medSpace, left: K.Sizes.smallSpace, bottom: K.Sizes.medSpace, right: K.Sizes.smallSpace)
+    keyboardType = .decimalPad
+    
     layer.cornerRadius = K.Sizes.medSpace
     backgroundColor = .systemGray6
-    keyboardType = .decimalPad
-    font = UIFont.monospacedSystemFont(ofSize: K.Sizes.medText, weight: .bold)
-    textContainerInset = UIEdgeInsets(top: K.Sizes.medSpace, left: K.Sizes.smallSpace, bottom: K.Sizes.medSpace, right: K.Sizes.smallSpace)
   }
   
   private func configureKeyboard() {
