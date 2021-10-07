@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ConverterViewController.swift
 //  Guap
 //
 //  Created by Arnaldo Rozon on 10/6/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
@@ -47,14 +47,14 @@ class ViewController: UIViewController {
 
 // MARK: - UITextViewDelegate
 
-extension ViewController: UITextViewDelegate {
+extension ConverterViewController: UITextViewDelegate {
   // TODO: Determine if this is needed
 }
 
 
 // MARK: - Layout
 
-private extension ViewController {
+private extension ConverterViewController {
   
   func applyLayouts() {
     layoutToolbarContainer()
@@ -88,7 +88,7 @@ private extension ViewController {
     view.addSubview(inputTextView)
     
     NSLayoutConstraint.activate([
-      inputTextView.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: K.Sizes.medSpace),
+      inputTextView.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: K.Sizes.largeSpace),
       inputTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.medSpace),
       inputTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.medSpace)),
       inputTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight)
@@ -102,7 +102,7 @@ private extension ViewController {
       outputLabel.topAnchor.constraint(equalTo: inputTextView.bottomAnchor, constant: K.Sizes.medSpace),
       outputLabel.leadingAnchor.constraint(equalTo: inputTextView.leadingAnchor),
       outputLabel.trailingAnchor.constraint(equalTo: inputTextView.trailingAnchor),
-      outputLabel.bottomAnchor.constraint(equalTo: convertButton.topAnchor, constant: -(K.Sizes.medSpace))
+      outputLabel.bottomAnchor.constraint(equalTo: convertButton.topAnchor, constant: -(K.Sizes.largeSpace))
     ])
   }
   

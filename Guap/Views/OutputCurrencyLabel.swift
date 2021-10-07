@@ -27,7 +27,9 @@ class OutputCurrencyLabel: UILabel {
   private func configureLabel() {
     font = UIFont.monospacedSystemFont(ofSize: K.Sizes.medText, weight: .bold)
     layer.cornerRadius = K.Sizes.medRadius
-    backgroundColor = .clear
+    layer.masksToBounds = true
+    // backgroundColor = .clear
+    backgroundColor = .systemGray6
   }
   
 }
