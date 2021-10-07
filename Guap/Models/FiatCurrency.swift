@@ -17,7 +17,7 @@ import Foundation
 struct FiatCurrency: Codable {
   
   var iso4217: String
-  var iso31661: String
+  var iso31661: String?
   var currencyName: String
   var countryName: String
   

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Veximoji
 
 class CurrencySelectorViewController: UITableViewController {
   
@@ -53,9 +54,10 @@ extension CurrencySelectorViewController {
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: CurrencySelectorViewController.reuseIdentifier, for: indexPath) as UITableViewCell
     let data = currencies?[indexPath.row]
+    let flag = Veximoji.country(code: data?.iso31661) ?? Veximoji.cultural(term: .white)
     
     if let data = data {
-      cell.textLabel?.text = "\(data.iso4217) - \(data.currencyName)"
+      cell.textLabel?.text = "\(flag!)\t \t \(data.iso4217) \t \(data.currencyName)"
     }
     
     return cell

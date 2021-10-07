@@ -1,961 +1,961 @@
 [
   {
     "iso4217": "AED",
-    "iso3166_1": "United Arab Emirates",
+    "iso3166_1": "AE",
     "currencyName": "UAE Dirham",
     "countryName": "United Arab Emirates"
   },
   {
     "iso4217": "AFN",
-    "iso3166_1": "Afghanistan",
+    "iso3166_1": "AF",
     "currencyName": "Afghan Afghani",
     "countryName": "Afghanistan"
   },
   {
     "iso4217": "ALL",
-    "iso3166_1": "Albania",
+    "iso3166_1": "AL",
     "currencyName": "Albanian Lek",
     "countryName": "Albania"
   },
   {
     "iso4217": "AMD",
-    "iso3166_1": "Armenia",
+    "iso3166_1": "AM",
     "currencyName": "Armenian Dram",
     "countryName": "Armenia"
   },
   {
     "iso4217": "ANG",
-    "iso3166_1": "Netherlands Antilles",
+    "iso3166_1": "BQ",
     "currencyName": "Netherlands Antillian Guilder",
     "countryName": "Netherlands Antilles"
   },
   {
     "iso4217": "AOA",
-    "iso3166_1": "Angola",
+    "iso3166_1": "AO",
     "currencyName": "Angolan Kwanza",
     "countryName": "Angola"
   },
   {
     "iso4217": "ARS",
-    "iso3166_1": "Argentina",
+    "iso3166_1": "AR",
     "currencyName": "Argentine Peso",
     "countryName": "Argentina"
   },
   {
     "iso4217": "AUD",
-    "iso3166_1": "Australia",
+    "iso3166_1": "AU",
     "currencyName": "Australian Dollar",
     "countryName": "Australia"
   },
   {
     "iso4217": "AWG",
-    "iso3166_1": "Aruba",
+    "iso3166_1": "AW",
     "currencyName": "Aruban Florin",
     "countryName": "Aruba"
   },
   {
     "iso4217": "AZN",
-    "iso3166_1": "Azerbaijan",
+    "iso3166_1": "AZ",
     "currencyName": "Azerbaijani Manat",
     "countryName": "Azerbaijan"
   },
   {
     "iso4217": "BAM",
-    "iso3166_1": "Bosnia And Herzegovina",
+    "iso3166_1": "BA",
     "currencyName": "Bosnia and Herzegovina Mark",
     "countryName": "Bosnia and Herzegovina"
   },
   {
     "iso4217": "BBD",
-    "iso3166_1": "Barbados",
+    "iso3166_1": "BB",
     "currencyName": "Barbados Dollar",
     "countryName": "Barbados"
   },
   {
     "iso4217": "BDT",
-    "iso3166_1": "Bangladesh",
+    "iso3166_1": "BD",
     "currencyName": "Bangladeshi Taka",
     "countryName": "Bangladesh"
   },
   {
     "iso4217": "BGN",
-    "iso3166_1": "Bulgaria",
+    "iso3166_1": "BG",
     "currencyName": "Bulgarian Lev",
     "countryName": "Bulgaria"
   },
   {
     "iso4217": "BHD",
-    "iso3166_1": "Bahrain",
+    "iso3166_1": "BH",
     "currencyName": "Bahraini Dinar",
     "countryName": "Bahrain"
   },
   {
     "iso4217": "BIF",
-    "iso3166_1": "Burundi",
+    "iso3166_1": "BI",
     "currencyName": "Burundian Franc",
     "countryName": "Burundi"
   },
   {
     "iso4217": "BMD",
-    "iso3166_1": "Bermuda",
+    "iso3166_1": "BM",
     "currencyName": "Bermudian Dollar",
     "countryName": "Bermuda"
   },
   {
     "iso4217": "BND",
-    "iso3166_1": "",
+    "iso3166_1": "BN",
     "currencyName": "Brunei Dollar",
     "countryName": "Brunei"
   },
   {
     "iso4217": "BOB",
-    "iso3166_1": "Bolivia",
+    "iso3166_1": "BO",
     "currencyName": "Bolivian Boliviano",
     "countryName": "Bolivia"
   },
   {
     "iso4217": "BRL",
-    "iso3166_1": "Brazil",
+    "iso3166_1": "BR",
     "currencyName": "Brazilian Real",
     "countryName": "Brazil"
   },
   {
     "iso4217": "BSD",
-    "iso3166_1": "Bahamas",
+    "iso3166_1": "BS",
     "currencyName": "Bahamian Dollar",
     "countryName": "Bahamas"
   },
   {
     "iso4217": "BTN",
-    "iso3166_1": "Bhutan",
+    "iso3166_1": "BT",
     "currencyName": "Bhutanese Ngultrum",
     "countryName": "Bhutan"
   },
   {
     "iso4217": "BWP",
-    "iso3166_1": "Botswana",
+    "iso3166_1": "BW",
     "currencyName": "Botswana Pula",
     "countryName": "Botswana"
   },
   {
     "iso4217": "BYN",
-    "iso3166_1": "Belarus",
+    "iso3166_1": "BY",
     "currencyName": "Belarusian Ruble",
     "countryName": "Belarus"
   },
   {
     "iso4217": "BZD",
-    "iso3166_1": "Belize",
+    "iso3166_1": "BZ",
     "currencyName": "Belize Dollar",
     "countryName": "Belize"
   },
   {
     "iso4217": "CAD",
-    "iso3166_1": "Canada",
+    "iso3166_1": "CA",
     "currencyName": "Canadian Dollar",
     "countryName": "Canada"
   },
   {
     "iso4217": "CDF",
-    "iso3166_1": "",
+    "iso3166_1": "CD",
     "currencyName": "Congolese Franc",
     "countryName": "Democratic Republic of the Congo"
   },
   {
     "iso4217": "CHF",
-    "iso3166_1": "Switzerland",
+    "iso3166_1": "CH",
     "currencyName": "Swiss Franc",
     "countryName": "Switzerland"
   },
   {
     "iso4217": "CLP",
-    "iso3166_1": "Chile",
+    "iso3166_1": "CL",
     "currencyName": "Chilean Peso",
     "countryName": "Chile"
   },
   {
     "iso4217": "CNY",
-    "iso3166_1": "China",
+    "iso3166_1": "CN",
     "currencyName": "Chinese Renminbi",
     "countryName": "China"
   },
   {
     "iso4217": "COP",
-    "iso3166_1": "Colombia",
+    "iso3166_1": "CO",
     "currencyName": "Colombian Peso",
     "countryName": "Colombia"
   },
   {
     "iso4217": "CRC",
-    "iso3166_1": "Costa Rica",
+    "iso3166_1": "CR",
     "currencyName": "Costa Rican Colon",
     "countryName": "Costa Rica"
   },
   {
     "iso4217": "CUC",
-    "iso3166_1": "Cuba",
+    "iso3166_1": "CU",
     "currencyName": "Cuban Convertible Peso",
     "countryName": "Cuba"
   },
   {
     "iso4217": "CUP",
-    "iso3166_1": "Cuba",
+    "iso3166_1": "CU",
     "currencyName": "Cuban Peso",
     "countryName": "Cuba"
   },
   {
     "iso4217": "CVE",
-    "iso3166_1": "Cape Verde",
+    "iso3166_1": "CV",
     "currencyName": "Cape Verdean Escudo",
     "countryName": "Cape Verde"
   },
   {
     "iso4217": "CZK",
-    "iso3166_1": "Czech Republic",
+    "iso3166_1": "CZ",
     "currencyName": "Czech Koruna",
-    "countryName": "Czech Republic"
+    "countryName": "Czechia"
   },
   {
     "iso4217": "DJF",
-    "iso3166_1": "Djibouti",
+    "iso3166_1": "DJ",
     "currencyName": "Djiboutian Franc",
     "countryName": "Djibouti"
   },
   {
     "iso4217": "DKK",
-    "iso3166_1": "Denmark",
+    "iso3166_1": "DK",
     "currencyName": "Danish Krone",
     "countryName": "Denmark"
   },
   {
     "iso4217": "DOP",
-    "iso3166_1": "Dominican Republic",
+    "iso3166_1": "DO",
     "currencyName": "Dominican Peso",
     "countryName": "Dominican Republic"
   },
   {
     "iso4217": "DZD",
-    "iso3166_1": "Algeria",
+    "iso3166_1": "DZ",
     "currencyName": "Algerian Dinar",
     "countryName": "Algeria"
   },
   {
     "iso4217": "EGP",
-    "iso3166_1": "Egypt",
+    "iso3166_1": "EG",
     "currencyName": "Egyptian Pound",
     "countryName": "Egypt"
   },
   {
     "iso4217": "ERN",
-    "iso3166_1": "Eritrea",
+    "iso3166_1": "ER",
     "currencyName": "Eritrean Nakfa",
     "countryName": "Eritrea"
   },
   {
     "iso4217": "ETB",
-    "iso3166_1": "Ethiopia",
+    "iso3166_1": "ET",
     "currencyName": "Ethiopian Birr",
     "countryName": "Ethiopia"
   },
   {
     "iso4217": "EUR",
-    "iso3166_1": "",
+    "iso3166_1": "EU",
     "currencyName": "Euro",
     "countryName": "European Union"
   },
   {
     "iso4217": "FJD",
-    "iso3166_1": "Fiji",
+    "iso3166_1": "FJ",
     "currencyName": "Fiji Dollar",
     "countryName": "Fiji"
   },
   {
     "iso4217": "FKP",
-    "iso3166_1": "",
+    "iso3166_1": "FK",
     "currencyName": "Falkland Islands Pound",
     "countryName": "Falkland Islands"
   },
   {
     "iso4217": "FOK",
-    "iso3166_1": "Faroe Islands",
+    "iso3166_1": "FO",
     "currencyName": "Faroese Króna",
     "countryName": "Faroe Islands"
   },
   {
     "iso4217": "GBP",
-    "iso3166_1": "United Kingdom",
+    "iso3166_1": "GB",
     "currencyName": "Pound Sterling",
     "countryName": "United Kingdom"
   },
   {
     "iso4217": "GEL",
-    "iso3166_1": "Georgia",
+    "iso3166_1": "GE",
     "currencyName": "Georgian Lari",
     "countryName": "Georgia"
   },
   {
     "iso4217": "GGP",
-    "iso3166_1": "Guernsey",
+    "iso3166_1": "GG",
     "currencyName": "Guernsey Pound",
     "countryName": "Guernsey"
   },
   {
     "iso4217": "GHS",
-    "iso3166_1": "Ghana",
+    "iso3166_1": "GH",
     "currencyName": "Ghanaian Cedi",
     "countryName": "Ghana"
   },
   {
     "iso4217": "GIP",
-    "iso3166_1": "Gibraltar",
+    "iso3166_1": "GI",
     "currencyName": "Gibraltar Pound",
     "countryName": "Gibraltar"
   },
   {
     "iso4217": "GMD",
-    "iso3166_1": "",
+    "iso3166_1": "GM",
     "currencyName": "Gambian Dalasi",
     "countryName": "The Gambia"
   },
   {
     "iso4217": "GNF",
-    "iso3166_1": "Guinea",
+    "iso3166_1": "GN",
     "currencyName": "Guinean Franc",
     "countryName": "Guinea"
   },
   {
     "iso4217": "GTQ",
-    "iso3166_1": "Guatemala",
+    "iso3166_1": "GT",
     "currencyName": "Guatemalan Quetzal",
     "countryName": "Guatemala"
   },
   {
     "iso4217": "GYD",
-    "iso3166_1": "Guyana",
+    "iso3166_1": "GY",
     "currencyName": "Guyanese Dollar",
     "countryName": "Guyana"
   },
   {
     "iso4217": "HKD",
-    "iso3166_1": "Hong Kong",
+    "iso3166_1": "HK",
     "currencyName": "Hong Kong Dollar",
     "countryName": "Hong Kong"
   },
   {
     "iso4217": "HNL",
-    "iso3166_1": "Honduras",
+    "iso3166_1": "HN",
     "currencyName": "Honduran Lempira",
     "countryName": "Honduras"
   },
   {
     "iso4217": "HRK",
-    "iso3166_1": "Croatia",
+    "iso3166_1": "HR",
     "currencyName": "Croatian Kuna",
     "countryName": "Croatia"
   },
   {
     "iso4217": "HTG",
-    "iso3166_1": "Haiti",
+    "iso3166_1": "HT",
     "currencyName": "Haitian Gourde",
     "countryName": "Haiti"
   },
   {
     "iso4217": "HUF",
-    "iso3166_1": "Hungary",
+    "iso3166_1": "HU",
     "currencyName": "Hungarian Forint",
     "countryName": "Hungary"
   },
   {
     "iso4217": "IDR",
-    "iso3166_1": "Indonesia",
+    "iso3166_1": "ID",
     "currencyName": "Indonesian Rupiah",
     "countryName": "Indonesia"
   },
   {
     "iso4217": "ILS",
-    "iso3166_1": "Israel",
+    "iso3166_1": "IL",
     "currencyName": "Israeli New Shekel",
     "countryName": "Israel"
   },
   {
     "iso4217": "IMP",
-    "iso3166_1": "Isle Of Man",
+    "iso3166_1": "IM",
     "currencyName": "Manx Pound",
     "countryName": "Isle of Man"
   },
   {
     "iso4217": "INR",
-    "iso3166_1": "India",
+    "iso3166_1": "IN",
     "currencyName": "Indian Rupee",
     "countryName": "India"
   },
   {
     "iso4217": "IQD",
-    "iso3166_1": "Iraq",
+    "iso3166_1": "IQ",
     "currencyName": "Iraqi Dinar",
     "countryName": "Iraq"
   },
   {
     "iso4217": "IRR",
-    "iso3166_1": "",
+    "iso3166_1": "IR",
     "currencyName": "Iranian Rial",
     "countryName": "Iran"
   },
   {
     "iso4217": "ISK",
-    "iso3166_1": "Iceland",
+    "iso3166_1": "IS",
     "currencyName": "Icelandic Króna",
     "countryName": "Iceland"
   },
   {
     "iso4217": "JMD",
-    "iso3166_1": "Jamaica",
+    "iso3166_1": "JM",
     "currencyName": "Jamaican Dollar",
     "countryName": "Jamaica"
   },
   {
     "iso4217": "JOD",
-    "iso3166_1": "Jordan",
+    "iso3166_1": "JO",
     "currencyName": "Jordanian Dinar",
     "countryName": "Jordan"
   },
   {
     "iso4217": "JPY",
-    "iso3166_1": "Japan",
+    "iso3166_1": "JP",
     "currencyName": "Japanese Yen",
     "countryName": "Japan"
   },
   {
     "iso4217": "KES",
-    "iso3166_1": "Kenya",
+    "iso3166_1": "KE",
     "currencyName": "Kenyan Shilling",
     "countryName": "Kenya"
   },
   {
     "iso4217": "KGS",
-    "iso3166_1": "Kyrgyzstan",
+    "iso3166_1": "KG",
     "currencyName": "Kyrgyzstani Som",
     "countryName": "Kyrgyzstan"
   },
   {
     "iso4217": "KHR",
-    "iso3166_1": "Cambodia",
+    "iso3166_1": "KH",
     "currencyName": "Cambodian Riel",
     "countryName": "Cambodia"
   },
   {
     "iso4217": "KID",
-    "iso3166_1": "Kiribati",
+    "iso3166_1": "KI",
     "currencyName": "Kiribati Dollar",
     "countryName": "Kiribati"
   },
   {
     "iso4217": "KMF",
-    "iso3166_1": "Comoros",
+    "iso3166_1": "KM",
     "currencyName": "Comorian Franc",
     "countryName": "Comoros"
   },
   {
     "iso4217": "KRW",
-    "iso3166_1": "",
+    "iso3166_1": "KR",
     "currencyName": "South Korean Won",
     "countryName": "South Korea"
   },
   {
     "iso4217": "KWD",
-    "iso3166_1": "Kuwait",
+    "iso3166_1": "KW",
     "currencyName": "Kuwaiti Dinar",
     "countryName": "Kuwait"
   },
   {
     "iso4217": "KYD",
-    "iso3166_1": "Cayman Islands",
+    "iso3166_1": "KY",
     "currencyName": "Cayman Islands Dollar",
     "countryName": "Cayman Islands"
   },
   {
     "iso4217": "KZT",
-    "iso3166_1": "Kazakhstan",
+    "iso3166_1": "KZ",
     "currencyName": "Kazakhstani Tenge",
     "countryName": "Kazakhstan"
   },
   {
     "iso4217": "LAK",
-    "iso3166_1": "",
+    "iso3166_1": "LA",
     "currencyName": "Lao Kip",
     "countryName": "Laos"
   },
   {
     "iso4217": "LBP",
-    "iso3166_1": "Lebanon",
+    "iso3166_1": "LB",
     "currencyName": "Lebanese Pound",
     "countryName": "Lebanon"
   },
   {
     "iso4217": "LKR",
-    "iso3166_1": "Sri Lanka",
+    "iso3166_1": "LK",
     "currencyName": "Sri Lanka Rupee",
     "countryName": "Sri Lanka"
   },
   {
     "iso4217": "LRD",
-    "iso3166_1": "Liberia",
+    "iso3166_1": "LR",
     "currencyName": "Liberian Dollar",
     "countryName": "Liberia"
   },
   {
     "iso4217": "LSL",
-    "iso3166_1": "Lesotho",
+    "iso3166_1": "LS",
     "currencyName": "Lesotho Loti",
     "countryName": "Lesotho"
   },
   {
     "iso4217": "LYD",
-    "iso3166_1": "",
+    "iso3166_1": "LY",
     "currencyName": "Libyan Dinar",
     "countryName": "Libya"
   },
   {
     "iso4217": "MAD",
-    "iso3166_1": "Morocco",
+    "iso3166_1": "MA",
     "currencyName": "Moroccan Dirham",
     "countryName": "Morocco"
   },
   {
     "iso4217": "MDL",
-    "iso3166_1": "Moldova",
+    "iso3166_1": "MD",
     "currencyName": "Moldovan Leu",
     "countryName": "Moldova"
   },
   {
     "iso4217": "MGA",
-    "iso3166_1": "Madagascar",
+    "iso3166_1": "MG",
     "currencyName": "Malagasy Ariary",
     "countryName": "Madagascar"
   },
   {
     "iso4217": "MKD",
-    "iso3166_1": "",
+    "iso3166_1": "MK",
     "currencyName": "Macedonian Denar",
     "countryName": "North Macedonia"
   },
   {
     "iso4217": "MMK",
-    "iso3166_1": "Myanmar",
+    "iso3166_1": "MM",
     "currencyName": "Burmese Kyat",
     "countryName": "Myanmar"
   },
   {
     "iso4217": "MNT",
-    "iso3166_1": "Mongolia",
+    "iso3166_1": "MN",
     "currencyName": "Mongolian Tögrög",
     "countryName": "Mongolia"
   },
   {
     "iso4217": "MOP",
-    "iso3166_1": "",
+    "iso3166_1": "MO",
     "currencyName": "Macanese Pataca",
-    "countryName": "Macau"
+    "countryName": "Macao"
   },
   {
     "iso4217": "MRU",
-    "iso3166_1": "Mauritania",
+    "iso3166_1": "MR",
     "currencyName": "Mauritanian Ouguiya",
     "countryName": "Mauritania"
   },
   {
     "iso4217": "MUR",
-    "iso3166_1": "Mauritius",
+    "iso3166_1": "MU",
     "currencyName": "Mauritian Rupee",
     "countryName": "Mauritius"
   },
   {
     "iso4217": "MVR",
-    "iso3166_1": "Maldives",
+    "iso3166_1": "MV",
     "currencyName": "Maldivian Rufiyaa",
     "countryName": "Maldives"
   },
   {
     "iso4217": "MWK",
-    "iso3166_1": "Malawi",
+    "iso3166_1": "MW",
     "currencyName": "Malawian Kwacha",
     "countryName": "Malawi"
   },
   {
     "iso4217": "MXN",
-    "iso3166_1": "Mexico",
+    "iso3166_1": "MX",
     "currencyName": "Mexican Peso",
     "countryName": "Mexico"
   },
   {
     "iso4217": "MYR",
-    "iso3166_1": "Malaysia",
+    "iso3166_1": "MY",
     "currencyName": "Malaysian Ringgit",
     "countryName": "Malaysia"
   },
   {
     "iso4217": "MZN",
-    "iso3166_1": "Mozambique",
+    "iso3166_1": "MZ",
     "currencyName": "Mozambican Metical",
     "countryName": "Mozambique"
   },
   {
     "iso4217": "NAD",
-    "iso3166_1": "Namibia",
+    "iso3166_1": "NA",
     "currencyName": "Namibian Dollar",
     "countryName": "Namibia"
   },
   {
     "iso4217": "NGN",
-    "iso3166_1": "Nigeria",
+    "iso3166_1": "NG",
     "currencyName": "Nigerian Naira",
     "countryName": "Nigeria"
   },
   {
     "iso4217": "NIO",
-    "iso3166_1": "Nicaragua",
+    "iso3166_1": "NI",
     "currencyName": "Nicaraguan Córdoba",
     "countryName": "Nicaragua"
   },
   {
     "iso4217": "NOK",
-    "iso3166_1": "Norway",
+    "iso3166_1": "NO",
     "currencyName": "Norwegian Krone",
     "countryName": "Norway"
   },
   {
     "iso4217": "NPR",
-    "iso3166_1": "Nepal",
+    "iso3166_1": "NP",
     "currencyName": "Nepalese Rupee",
     "countryName": "Nepal"
   },
   {
     "iso4217": "NZD",
-    "iso3166_1": "New Zealand",
+    "iso3166_1": "NZ",
     "currencyName": "New Zealand Dollar",
     "countryName": "New Zealand"
   },
   {
     "iso4217": "OMR",
-    "iso3166_1": "Oman",
+    "iso3166_1": "OM",
     "currencyName": "Omani Rial",
     "countryName": "Oman"
   },
   {
     "iso4217": "PAB",
-    "iso3166_1": "Panama",
+    "iso3166_1": "PA",
     "currencyName": "Panamanian Balboa",
     "countryName": "Panama"
   },
   {
     "iso4217": "PEN",
-    "iso3166_1": "Peru",
+    "iso3166_1": "PE",
     "currencyName": "Peruvian Sol",
     "countryName": "Peru"
   },
   {
     "iso4217": "PGK",
-    "iso3166_1": "Papua New Guinea",
+    "iso3166_1": "PG",
     "currencyName": "Papua New Guinean Kina",
     "countryName": "Papua New Guinea"
   },
   {
     "iso4217": "PHP",
-    "iso3166_1": "Philippines",
+    "iso3166_1": "PH",
     "currencyName": "Philippine Peso",
     "countryName": "Philippines"
   },
   {
     "iso4217": "PKR",
-    "iso3166_1": "Pakistan",
+    "iso3166_1": "PK",
     "currencyName": "Pakistani Rupee",
     "countryName": "Pakistan"
   },
   {
     "iso4217": "PLN",
-    "iso3166_1": "Poland",
+    "iso3166_1": "PL",
     "currencyName": "Polish Złoty",
     "countryName": "Poland"
   },
   {
     "iso4217": "PYG",
-    "iso3166_1": "Paraguay",
+    "iso3166_1": "PY",
     "currencyName": "Paraguayan Guaraní",
     "countryName": "Paraguay"
   },
   {
     "iso4217": "QAR",
-    "iso3166_1": "Qatar",
+    "iso3166_1": "QA",
     "currencyName": "Qatari Riyal",
     "countryName": "Qatar"
   },
   {
     "iso4217": "RON",
-    "iso3166_1": "Romania",
+    "iso3166_1": "RO",
     "currencyName": "Romanian Leu",
     "countryName": "Romania"
   },
   {
     "iso4217": "RSD",
-    "iso3166_1": "Serbia",
+    "iso3166_1": "RS",
     "currencyName": "Serbian Dinar",
     "countryName": "Serbia"
   },
   {
     "iso4217": "RUB",
-    "iso3166_1": "",
+    "iso3166_1": "RU",
     "currencyName": "Russian Ruble",
     "countryName": "Russia"
   },
   {
     "iso4217": "RWF",
-    "iso3166_1": "Rwanda",
+    "iso3166_1": "RW",
     "currencyName": "Rwandan Franc",
     "countryName": "Rwanda"
   },
   {
     "iso4217": "SAR",
-    "iso3166_1": "Saudi Arabia",
+    "iso3166_1": "SA",
     "currencyName": "Saudi Riyal",
     "countryName": "Saudi Arabia"
   },
   {
     "iso4217": "SBD",
-    "iso3166_1": "Solomon Islands",
+    "iso3166_1": "SB",
     "currencyName": "Solomon Islands Dollar",
     "countryName": "Solomon Islands"
   },
   {
     "iso4217": "SCR",
-    "iso3166_1": "Seychelles",
+    "iso3166_1": "SC",
     "currencyName": "Seychellois Rupee",
     "countryName": "Seychelles"
   },
   {
     "iso4217": "SDG",
-    "iso3166_1": "Sudan",
+    "iso3166_1": "SD",
     "currencyName": "Sudanese Pound",
     "countryName": "Sudan"
   },
   {
     "iso4217": "SEK",
-    "iso3166_1": "Sweden",
+    "iso3166_1": "SE",
     "currencyName": "Swedish Krona",
     "countryName": "Sweden"
   },
   {
     "iso4217": "SGD",
-    "iso3166_1": "Singapore",
+    "iso3166_1": "SG",
     "currencyName": "Singapore Dollar",
     "countryName": "Singapore"
   },
   {
     "iso4217": "SHP",
-    "iso3166_1": "Saint Helena",
+    "iso3166_1": "SH",
     "currencyName": "Saint Helena Pound",
     "countryName": "Saint Helena"
   },
   {
     "iso4217": "SLL",
-    "iso3166_1": "Sierra Leone",
+    "iso3166_1": "SL",
     "currencyName": "Sierra Leonean Leone",
     "countryName": "Sierra Leone"
   },
   {
     "iso4217": "SOS",
-    "iso3166_1": "Somalia",
+    "iso3166_1": "SO",
     "currencyName": "Somali Shilling",
     "countryName": "Somalia"
   },
   {
     "iso4217": "SRD",
-    "iso3166_1": "Suriname",
+    "iso3166_1": "SR",
     "currencyName": "Surinamese Dollar",
     "countryName": "Suriname"
   },
   {
     "iso4217": "SSP",
-    "iso3166_1": "",
+    "iso3166_1": "SS",
     "currencyName": "South Sudanese Pound",
     "countryName": "South Sudan"
   },
   {
     "iso4217": "STN",
-    "iso3166_1": "",
+    "iso3166_1": "ST",
     "currencyName": "São Tomé and Príncipe Dobra",
     "countryName": "São Tomé and Príncipe"
   },
   {
     "iso4217": "SYP",
-    "iso3166_1": "",
+    "iso3166_1": "SY",
     "currencyName": "Syrian Pound",
     "countryName": "Syria"
   },
   {
     "iso4217": "SZL",
-    "iso3166_1": "",
+    "iso3166_1": "SZ",
     "currencyName": "Eswatini Lilangeni",
     "countryName": "Eswatini"
   },
   {
     "iso4217": "THB",
-    "iso3166_1": "Thailand",
+    "iso3166_1": "TH",
     "currencyName": "Thai Baht",
     "countryName": "Thailand"
   },
   {
     "iso4217": "TJS",
-    "iso3166_1": "Tajikistan",
+    "iso3166_1": "TJ",
     "currencyName": "Tajikistani Somoni",
     "countryName": "Tajikistan"
   },
   {
     "iso4217": "TMT",
-    "iso3166_1": "Turkmenistan",
+    "iso3166_1": "TM",
     "currencyName": "Turkmenistan Manat",
     "countryName": "Turkmenistan"
   },
   {
     "iso4217": "TND",
-    "iso3166_1": "Tunisia",
+    "iso3166_1": "TN",
     "currencyName": "Tunisian Dinar",
     "countryName": "Tunisia"
   },
   {
     "iso4217": "TOP",
-    "iso3166_1": "Tonga",
+    "iso3166_1": "TO",
     "currencyName": "Tongan Paʻanga",
     "countryName": "Tonga"
   },
   {
     "iso4217": "TRY",
-    "iso3166_1": "Turkey",
+    "iso3166_1": "TR",
     "currencyName": "Turkish Lira",
     "countryName": "Turkey"
   },
   {
     "iso4217": "TTD",
-    "iso3166_1": "Trinidad And Tobago",
+    "iso3166_1": "TT",
     "currencyName": "Trinidad and Tobago Dollar",
     "countryName": "Trinidad and Tobago"
   },
   {
     "iso4217": "TVD",
-    "iso3166_1": "Tuvalu",
+    "iso3166_1": "TV",
     "currencyName": "Tuvaluan Dollar",
     "countryName": "Tuvalu"
   },
   {
     "iso4217": "TWD",
-    "iso3166_1": "Taiwan",
+    "iso3166_1": "TW",
     "currencyName": "New Taiwan Dollar",
     "countryName": "Taiwan"
   },
   {
     "iso4217": "TZS",
-    "iso3166_1": "Tanzania",
+    "iso3166_1": "TZ",
     "currencyName": "Tanzanian Shilling",
     "countryName": "Tanzania"
   },
   {
     "iso4217": "UAH",
-    "iso3166_1": "Ukraine",
+    "iso3166_1": "UA",
     "currencyName": "Ukrainian Hryvnia",
     "countryName": "Ukraine"
   },
   {
     "iso4217": "UGX",
-    "iso3166_1": "Uganda",
+    "iso3166_1": "UG",
     "currencyName": "Ugandan Shilling",
     "countryName": "Uganda"
   },
   {
     "iso4217": "USD",
-    "iso3166_1": "United States",
+    "iso3166_1": "US",
     "currencyName": "United States Dollar",
     "countryName": "United States"
   },
   {
     "iso4217": "UYU",
-    "iso3166_1": "Uruguay",
+    "iso3166_1": "UY",
     "currencyName": "Uruguayan Peso",
     "countryName": "Uruguay"
   },
   {
     "iso4217": "UZS",
-    "iso3166_1": "Uzbekistan",
+    "iso3166_1": "UZ",
     "currencyName": "Uzbekistani So'm",
     "countryName": "Uzbekistan"
   },
   {
     "iso4217": "VES",
-    "iso3166_1": "Venezuela",
+    "iso3166_1": "VE",
     "currencyName": "Venezuelan Bolívar Soberano",
     "countryName": "Venezuela"
   },
   {
     "iso4217": "VND",
-    "iso3166_1": "Vietnam",
+    "iso3166_1": "VN",
     "currencyName": "Vietnamese Đồng",
     "countryName": "Vietnam"
   },
   {
     "iso4217": "VUV",
-    "iso3166_1": "Vanuatu",
+    "iso3166_1": "VU",
     "currencyName": "Vanuatu Vatu",
     "countryName": "Vanuatu"
   },
   {
     "iso4217": "WST",
-    "iso3166_1": "Samoa",
+    "iso3166_1": "WS",
     "currencyName": "Samoan Tālā",
     "countryName": "Samoa"
   },
   {
     "iso4217": "XAF",
-    "iso3166_1": "",
+    "iso3166_1": null,
     "currencyName": "Central African CFA Franc",
     "countryName": "CEMAC"
   },
   {
     "iso4217": "XCD",
-    "iso3166_1": "",
+    "iso3166_1": null,
     "currencyName": "East Caribbean Dollar",
     "countryName": "Organisation of Eastern Caribbean States"
   },
   {
     "iso4217": "XDR",
-    "iso3166_1": "",
+    "iso3166_1": null,
     "currencyName": "Special Drawing Rights",
     "countryName": "International Monetary Fund"
   },
   {
     "iso4217": "XOF",
-    "iso3166_1": "",
+    "iso3166_1": null,
     "currencyName": "West African CFA franc",
     "countryName": "CFA"
   },
   {
     "iso4217": "XPF",
-    "iso3166_1": "",
+    "iso3166_1": "PF",
     "currencyName": "CFP Franc",
     "countryName": "Collectivités d'Outre-Mer"
   },
   {
     "iso4217": "YER",
-    "iso3166_1": "Yemen",
+    "iso3166_1": "YE",
     "currencyName": "Yemeni Rial",
     "countryName": "Yemen"
   },
   {
     "iso4217": "ZAR",
-    "iso3166_1": "South Africa",
+    "iso3166_1": "ZA",
     "currencyName": "South African Rand",
     "countryName": "South Africa"
   },
   {
     "iso4217": "ZMW",
-    "iso3166_1": "Zambia",
+    "iso3166_1": "ZM",
     "currencyName": "Zambian Kwacha",
     "countryName": "Zambia"
   }
