@@ -28,10 +28,10 @@ class PrimaryButton: UIButton {
     setTitle(title, for: .normal)
     setTitleColor(color, for: .normal)
     setTitleColor(self.titleColor(for: .normal)?.withAlphaComponent(0.5), for: .highlighted)
-    titleLabel?.font = UIFont.monospacedSystemFont(ofSize: K.Sizes.smallText, weight: .bold)
+    titleLabel?.font = UIFont.systemFont(ofSize: K.Sizes.mdText, weight: .bold)
     
     backgroundColor = background
-    layer.cornerRadius = K.Sizes.medRadius
+    layer.cornerRadius = K.Sizes.mdRadius
   }
   
 }

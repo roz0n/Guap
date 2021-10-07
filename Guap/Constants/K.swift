@@ -15,15 +15,15 @@ struct K {
   struct Sizes {
     // MARK: - Spacing
     
-    static let smallSpace: CGFloat = 8
-    static let medSpace: CGFloat = 12
-    static let largeSpace: CGFloat = 24
+    static let smSpace: CGFloat = 8
+    static let mdSpace: CGFloat = 12
+    static let lgSpace: CGFloat = 24
     
     // MARK: - Radii
     
-    static let smallRadius: CGFloat = 8
-    static let medRadius: CGFloat = 12
-    static let largeRadius: CGFloat = 24
+    static let smRadius: CGFloat = 8
+    static let mdRadius: CGFloat = 12
+    static let lgRadius: CGFloat = 24
     
     // MARK: - Heights
     
@@ -34,8 +34,10 @@ struct K {
     
     // MARK: - Fonts
     
-    static let smallText: CGFloat = 16
-    static let medText: CGFloat = 24
+    static let smText: CGFloat = 16
+    static let mdText: CGFloat = 20
+    static let lgText: CGFloat = 24
+    static let xlText: CGFloat = 32
   }
   
   // MARK: - Strings

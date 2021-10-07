@@ -25,11 +25,11 @@ class OutputCurrencyLabel: UILabel {
   // MARK: - Configurations
   
   private func configureLabel() {
-    font = UIFont.monospacedSystemFont(ofSize: K.Sizes.medText, weight: .bold)
-    layer.cornerRadius = K.Sizes.medRadius
+    font = UIFont.systemFont(ofSize: K.Sizes.mdText, weight: .bold)
+    layer.cornerRadius = K.Sizes.mdRadius
     layer.masksToBounds = true
     // backgroundColor = .clear
-    backgroundColor = .systemGray6
+    backgroundColor = .systemGray6.withAlphaComponent(0.5)
   }
   
 }
