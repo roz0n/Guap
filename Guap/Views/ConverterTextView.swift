@@ -1,5 +1,5 @@
 //
-//  InputCurrencyTextView.swift
+//  ConverterTextView.swift
 //  Guap
 //
 //  Created by Arnaldo Rozon on 10/6/21.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InputCurrencyTextView: UITextView {
+class ConverterTextView: UITextView {
   
   // MARK: - Properties
   
@@ -32,8 +32,6 @@ class InputCurrencyTextView: UITextView {
   // MARK: - Configurations
   
   private func configureTextView() {
-    translatesAutoresizingMaskIntoConstraints = false
-    
     font = UIFont.systemFont(ofSize: K.Sizes.mdText, weight: .bold)
     textContainer.maximumNumberOfLines = 3
     textContainer.lineBreakMode = .byTruncatingMiddle

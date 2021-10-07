@@ -15,8 +15,8 @@ class ConverterViewController: UIViewController {
   var inputButton = PrimaryButton(title: K.Labels.inputButton, color: .white, background: .systemBlue)
   var outputButton = PrimaryButton(title: K.Labels.outputButton, color: .white, background: .systemRed)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
-  var inputTextView = InputCurrencyTextView()
-  var outputLabel = OutputCurrencyLabel()
+  var inputTextView = ConverterTextView()
+  var outputTextView = ConverterTextView()
   
   // MARK: - Views
   
@@ -29,6 +29,15 @@ class ConverterViewController: UIViewController {
     return stack
   }()
   
+  var conversionContainer: UIStackView = {
+    let stack = UIStackView()
+    stack.translatesAutoresizingMaskIntoConstraints = false
+    stack.axis = .vertical
+    stack.distribution = .fillEqually
+    stack.spacing = K.Sizes.mdSpace
+    return stack
+  }()
+  
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
@@ -36,7 +45,7 @@ class ConverterViewController: UIViewController {
     view.backgroundColor = .systemGray5
     
     applyLayouts()
-    applyGestures()    
+    applyGestures()
   }
   
   // MARK: - Configurations
@@ -87,7 +96,7 @@ class ConverterViewController: UIViewController {
   // MARK: - Helpers
   
   private func updateOutputLabel() {
-    outputLabel.text = "53453.00"
+    //    outputLabel.text = "53453.00"
   }
   
 }
@@ -106,9 +115,9 @@ private extension ConverterViewController {
   func applyLayouts() {
     layoutToolbarContainer()
     layoutToolbarButtons()
-    layoutInputTextView()
+    layoutConversionContainer()
+    layoutConversionTextViews()
     layoutConvertButton()
-    layoutOutputLabel()
   }
   
   // MARK: - Toolbar
@@ -129,39 +138,33 @@ private extension ConverterViewController {
     toolbarContainer.addArrangedSubview(outputButton)
   }
   
-  // MARK: - Text Fields
+  // MARK: - Text Views
   
-  func layoutInputTextView() {
-    view.addSubview(inputTextView)
+  func layoutConversionContainer() {
+    view.addSubview(conversionContainer)
     
     NSLayoutConstraint.activate([
-      inputTextView.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: K.Sizes.lgSpace),
-      inputTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.mdSpace),
-      inputTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.mdSpace)),
-      inputTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight)
+      conversionContainer.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: K.Sizes.lgSpace),
+      conversionContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.mdSpace),
+      conversionContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.mdSpace)),
+      conversionContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(K.Sizes.convertButtonHeight + K.Sizes.lgSpace))
     ])
   }
   
-  func layoutOutputLabel() {
-    view.addSubview(outputLabel)
-    
-    NSLayoutConstraint.activate([
-      outputLabel.topAnchor.constraint(equalTo: inputTextView.bottomAnchor, constant: K.Sizes.mdSpace),
-      outputLabel.leadingAnchor.constraint(equalTo: inputTextView.leadingAnchor),
-      outputLabel.trailingAnchor.constraint(equalTo: inputTextView.trailingAnchor),
-      outputLabel.bottomAnchor.constraint(equalTo: convertButton.topAnchor, constant: -(K.Sizes.lgSpace))
-    ])
+  func layoutConversionTextViews() {
+    conversionContainer.addArrangedSubview(inputTextView)
+    conversionContainer.addArrangedSubview(outputTextView)
   }
   
-  // MARK: - Conversion Button
+  // MARK: - Convert Button
   
   func layoutConvertButton() {
     view.addSubview(convertButton)
     
     NSLayoutConstraint.activate([
       convertButton.heightAnchor.constraint(equalToConstant: K.Sizes.convertButtonHeight),
-      convertButton.leadingAnchor.constraint(equalTo: inputTextView.leadingAnchor),
-      convertButton.trailingAnchor.constraint(equalTo: inputTextView.trailingAnchor),
+      convertButton.leadingAnchor.constraint(equalTo: toolbarContainer.leadingAnchor),
+      convertButton.trailingAnchor.constraint(equalTo: toolbarContainer.trailingAnchor),
       convertButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
   }
