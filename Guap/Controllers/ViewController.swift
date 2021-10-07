@@ -59,8 +59,9 @@ private extension ViewController {
   func applyLayouts() {
     layoutToolbarContainer()
     layoutToolbarButtons()
-    layoutTextField()
+    layoutInputTextView()
     layoutConvertButton()
+    layoutOutputLabel()
   }
   
   // MARK: - Toolbar
@@ -83,7 +84,7 @@ private extension ViewController {
   
   // MARK: - Text Fields
   
-  func layoutTextField() {
+  func layoutInputTextView() {
     view.addSubview(inputTextView)
     
     NSLayoutConstraint.activate([
@@ -91,6 +92,17 @@ private extension ViewController {
       inputTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.medSpace),
       inputTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.medSpace)),
       inputTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight)
+    ])
+  }
+  
+  func layoutOutputLabel() {
+    view.addSubview(outputLabel)
+    
+    NSLayoutConstraint.activate([
+      outputLabel.topAnchor.constraint(equalTo: inputTextView.bottomAnchor, constant: K.Sizes.medSpace),
+      outputLabel.leadingAnchor.constraint(equalTo: inputTextView.leadingAnchor),
+      outputLabel.trailingAnchor.constraint(equalTo: inputTextView.trailingAnchor),
+      outputLabel.bottomAnchor.constraint(equalTo: convertButton.topAnchor, constant: -(K.Sizes.medSpace))
     ])
   }
   

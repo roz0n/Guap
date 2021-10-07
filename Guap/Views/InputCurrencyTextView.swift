@@ -40,7 +40,7 @@ class InputCurrencyTextView: UITextView {
     textContainerInset = UIEdgeInsets(top: K.Sizes.medSpace, left: K.Sizes.smallSpace, bottom: K.Sizes.medSpace, right: K.Sizes.smallSpace)
     keyboardType = .decimalPad
     
-    layer.cornerRadius = K.Sizes.medSpace
+    layer.cornerRadius = K.Sizes.medRadius
     backgroundColor = .systemGray6
   }
   
