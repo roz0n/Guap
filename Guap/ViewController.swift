@@ -41,6 +41,20 @@ class ViewController: UIViewController {
     applyLayouts()
   }
   
+  // MARK: - Configurations
+  
+  private func configureTextView() {
+    currencyTextView.delegate = self
+  }
+  
+}
+
+// MARK: - UITextViewDelegate
+
+extension ViewController: UITextViewDelegate {
+  
+  // TODO: Determine if this is needed
+  
 }
 
 
@@ -58,7 +72,7 @@ fileprivate extension ViewController {
   
   func layoutToolbarContainer() {
     view.addSubview(currencyToolbarConversion)
-
+    
     NSLayoutConstraint.activate([
       currencyToolbarConversion.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: medSpace),
       currencyToolbarConversion.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: medSpace),
