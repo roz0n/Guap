@@ -13,14 +13,8 @@ class CurrencySelectorViewController: UITableViewController {
   // MARK: - Properties
   
   static let reuseIdentifier = "currencySelectorCell"
-  
   let dataManager = FiatCurrencyDataManager()
-  
-  var currencies: [FiatCurrency]? {
-    didSet {
-      print("Currencies list: \(currencies)")
-    }
-  }
+  var currencies: [FiatCurrency]?
   
   // MARK: - Lifecycle
   

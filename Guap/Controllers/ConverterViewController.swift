@@ -18,12 +18,6 @@ class ConverterViewController: UIViewController {
   var inputTextView = InputCurrencyTextView()
   var outputLabel = OutputCurrencyLabel()
   
-//  var currenciesList: [FiatCurrency]? {
-//    didSet {
-//      print("Currencies list: \(currenciesList)")
-//    }
-//  }
-  
   // MARK: - Views
   
   var toolbarContainer: UIStackView = {
