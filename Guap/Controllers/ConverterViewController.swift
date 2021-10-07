@@ -11,6 +11,13 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
+  let dataManager = FiatCurrencyDataManager()
+  var currenciesList: [FiatCurrency]? {
+    didSet {
+      print("Currencies list: \(currenciesList)")
+    }
+  }
+  
   var inputButton = PrimaryButton(title: K.Labels.inputButton, color: .white, background: .systemBlue)
   var outputButton = PrimaryButton(title: K.Labels.outputButton, color: .white, background: .systemRed)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
@@ -36,6 +43,8 @@ class ConverterViewController: UIViewController {
     
     applyLayouts()
     applyGestures()
+    
+    fetchCurrenciesList()
   }
   
   // MARK: - Configurations
@@ -74,6 +83,18 @@ class ConverterViewController: UIViewController {
 
 extension ConverterViewController: UITextViewDelegate {
   // TODO: Determine if this is needed
+}
+
+// MARK: - Networking
+
+private extension ConverterViewController {
+  
+  func fetchCurrenciesList() {
+    dataManager.getCurrenciesList { [weak self] data in
+      self?.currenciesList = data
+    }
+  }
+  
 }
 
 

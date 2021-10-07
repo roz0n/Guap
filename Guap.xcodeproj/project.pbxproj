@@ -19,6 +19,9 @@
 		23BEB067270E991100BCCA71 /* InputCurrencyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB066270E991100BCCA71 /* InputCurrencyTextView.swift */; };
 		23BEB069270EA4E000BCCA71 /* OutputCurrencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB068270EA4E000BCCA71 /* OutputCurrencyLabel.swift */; };
 		23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB06B270EA6FB00BCCA71 /* K.swift */; };
+		23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB071270EBACA00BCCA71 /* FiatCurrencyDataManager.swift */; };
+		23BEB075270EC72900BCCA71 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 23BEB074270EC72900BCCA71 /* currencies.json */; };
+		23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 		23BEB066270E991100BCCA71 /* InputCurrencyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCurrencyTextView.swift; sourceTree = "<group>"; };
 		23BEB068270EA4E000BCCA71 /* OutputCurrencyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCurrencyLabel.swift; sourceTree = "<group>"; };
 		23BEB06B270EA6FB00BCCA71 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		23BEB071270EBACA00BCCA71 /* FiatCurrencyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrencyDataManager.swift; sourceTree = "<group>"; };
+		23BEB074270EC72900BCCA71 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
+		23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +111,9 @@
 		23BEB02F270E57B100BCCA71 /* Guap */ = {
 			isa = PBXGroup;
 			children = (
+				23BEB076270EC7C500BCCA71 /* Models */,
+				23BEB073270EC6F200BCCA71 /* Data */,
+				23BEB070270EBAAF00BCCA71 /* Managers */,
 				23BEB06F270EAD4600BCCA71 /* Support */,
 				23BEB06E270EAD2400BCCA71 /* Application */,
 				23BEB06D270EAD1700BCCA71 /* Controllers */,
@@ -174,6 +183,30 @@
 				23BEB03B270E57B300BCCA71 /* LaunchScreen.storyboard */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		23BEB070270EBAAF00BCCA71 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB071270EBACA00BCCA71 /* FiatCurrencyDataManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		23BEB073270EC6F200BCCA71 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB074270EC72900BCCA71 /* currencies.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		23BEB076270EC7C500BCCA71 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -282,6 +315,7 @@
 			files = (
 				23BEB03D270E57B300BCCA71 /* LaunchScreen.storyboard in Resources */,
 				23BEB03A270E57B300BCCA71 /* Assets.xcassets in Resources */,
+				23BEB075270EC72900BCCA71 /* currencies.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,8 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BEB035270E57B100BCCA71 /* ConverterViewController.swift in Sources */,
+				23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */,
 				23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */,
 				23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */,
+				23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */,
 				23BEB069270EA4E000BCCA71 /* OutputCurrencyLabel.swift in Sources */,
 				23BEB067270E991100BCCA71 /* InputCurrencyTextView.swift in Sources */,
 				23BEB065270E8F0C00BCCA71 /* PrimaryButton.swift in Sources */,
