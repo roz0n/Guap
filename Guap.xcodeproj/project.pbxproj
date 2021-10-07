@@ -22,6 +22,8 @@
 		23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB071270EBACA00BCCA71 /* FiatCurrencyDataManager.swift */; };
 		23BEB075270EC72900BCCA71 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 23BEB074270EC72900BCCA71 /* currencies.json */; };
 		23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */; };
+		23BEB07C270ED05500BCCA71 /* CurrencySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */; };
+		23BEB07F270ED0FA00BCCA71 /* Veximoji in Frameworks */ = {isa = PBXBuildFile; productRef = 23BEB07E270ED0FA00BCCA71 /* Veximoji */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,7 @@
 		23BEB071270EBACA00BCCA71 /* FiatCurrencyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrencyDataManager.swift; sourceTree = "<group>"; };
 		23BEB074270EC72900BCCA71 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
 		23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrency.swift; sourceTree = "<group>"; };
+		23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23BEB07F270ED0FA00BCCA71 /* Veximoji in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				23BEB034270E57B100BCCA71 /* ConverterViewController.swift */,
+				23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -225,6 +230,9 @@
 			dependencies = (
 			);
 			name = Guap;
+			packageProductDependencies = (
+				23BEB07E270ED0FA00BCCA71 /* Veximoji */,
+			);
 			productName = Guap;
 			productReference = 23BEB02D270E57B100BCCA71 /* Guap.app */;
 			productType = "com.apple.product-type.application";
@@ -297,6 +305,9 @@
 				Base,
 			);
 			mainGroup = 23BEB024270E57B100BCCA71;
+			packageReferences = (
+				23BEB07D270ED0FA00BCCA71 /* XCRemoteSwiftPackageReference "Veximoji" */,
+			);
 			productRefGroup = 23BEB02E270E57B100BCCA71 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -344,6 +355,7 @@
 				23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */,
 				23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */,
 				23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */,
+				23BEB07C270ED05500BCCA71 /* CurrencySelectorViewController.swift in Sources */,
 				23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */,
 				23BEB069270EA4E000BCCA71 /* OutputCurrencyLabel.swift in Sources */,
 				23BEB067270E991100BCCA71 /* InputCurrencyTextView.swift in Sources */,
@@ -702,6 +714,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		23BEB07D270ED0FA00BCCA71 /* XCRemoteSwiftPackageReference "Veximoji" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/roz0n/Veximoji";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		23BEB07E270ED0FA00BCCA71 /* Veximoji */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 23BEB07D270ED0FA00BCCA71 /* XCRemoteSwiftPackageReference "Veximoji" */;
+			productName = Veximoji;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 23BEB025270E57B100BCCA71 /* Project object */;
 }

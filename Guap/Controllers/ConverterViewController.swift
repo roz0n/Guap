@@ -11,18 +11,18 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
-  let dataManager = FiatCurrencyDataManager()
-  var currenciesList: [FiatCurrency]? {
-    didSet {
-      print("Currencies list: \(currenciesList)")
-    }
-  }
-  
+  var currencySelector = CurrencySelectorViewController()
   var inputButton = PrimaryButton(title: K.Labels.inputButton, color: .white, background: .systemBlue)
   var outputButton = PrimaryButton(title: K.Labels.outputButton, color: .white, background: .systemRed)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
   var inputTextView = InputCurrencyTextView()
   var outputLabel = OutputCurrencyLabel()
+  
+//  var currenciesList: [FiatCurrency]? {
+//    didSet {
+//      print("Currencies list: \(currenciesList)")
+//    }
+//  }
   
   // MARK: - Views
   
@@ -42,9 +42,7 @@ class ConverterViewController: UIViewController {
     view.backgroundColor = .systemGray5
     
     applyLayouts()
-    applyGestures()
-    
-    fetchCurrenciesList()
+    applyGestures()    
   }
   
   // MARK: - Configurations
@@ -57,6 +55,7 @@ class ConverterViewController: UIViewController {
   
   private func applyGestures() {
     addConvertButtonGesture()
+    addCurrencySelectionGestures()
   }
   
   private func addConvertButtonGesture() {
@@ -64,11 +63,31 @@ class ConverterViewController: UIViewController {
     convertButton.addGestureRecognizer(tapGesture)
   }
   
+  private func addCurrencySelectionGestures() {
+    let tapInputGesture = UITapGestureRecognizer(target: self, action: #selector(tappedInputButton))
+    let tapOutputGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOutputButton))
+    
+    inputButton.addGestureRecognizer(tapInputGesture)
+    outputButton.addGestureRecognizer(tapOutputGesture)
+  }
+  
   // MARK: - Selectors
   
   @objc func tappedConvertButton() {
     print("Convert button tapped")
     updateOutputLabel()
+  }
+  
+  @objc func tappedInputButton() {
+    present(currencySelector, animated: true) {
+      print("Presented currency selector: input")
+    }
+  }
+  
+  @objc func tappedOutputButton() {
+    present(currencySelector, animated: true) {
+      print("Presented currency selector: output")
+    }
   }
   
   // MARK: - Helpers
@@ -83,18 +102,6 @@ class ConverterViewController: UIViewController {
 
 extension ConverterViewController: UITextViewDelegate {
   // TODO: Determine if this is needed
-}
-
-// MARK: - Networking
-
-private extension ConverterViewController {
-  
-  func fetchCurrenciesList() {
-    dataManager.getCurrenciesList { [weak self] data in
-      self?.currenciesList = data
-    }
-  }
-  
 }
 
 
