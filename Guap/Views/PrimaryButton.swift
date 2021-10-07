@@ -1,5 +1,5 @@
 //
-//  CurrencyButton.swift
+//  PrimaryButton.swift
 //  Guap
 //
 //  Created by Arnaldo Rozon on 10/6/21.
@@ -7,12 +7,14 @@
 
 import UIKit
 
-class CurrencyButton: UIButton {
+class PrimaryButton: UIButton {
   
   // MARK: - Initializers
   
   init(title: String, color: UIColor, background: UIColor) {
     super.init(frame: .zero)
+    translatesAutoresizingMaskIntoConstraints = false
+    
     configureButton(title: title, color: color, background: background)
   }
   
@@ -26,9 +28,10 @@ class CurrencyButton: UIButton {
     setTitle(title, for: .normal)
     setTitleColor(color, for: .normal)
     setTitleColor(self.titleColor(for: .normal)?.withAlphaComponent(0.5), for: .highlighted)
-    titleLabel?.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .bold)
+    titleLabel?.font = UIFont.monospacedSystemFont(ofSize: K.Sizes.smallText, weight: .bold)
+    
     backgroundColor = background
-    layer.cornerRadius = 12
+    layer.cornerRadius = K.Sizes.medRadius
   }
   
 }

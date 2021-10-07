@@ -11,40 +11,36 @@ class ViewController: UIViewController {
   
   // MARK: - Properties
   
+  var inputButton = PrimaryButton(title: K.Labels.inputButton, color: .white, background: .systemBlue)
+  var outputButton = PrimaryButton(title: K.Labels.outputButton, color: .white, background: .systemRed)
+  var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
+  var inputTextView = InputCurrencyTextView()
+  var outputLabel = OutputCurrencyLabel()
+  
   // MARK: - Views
   
-  var baseCurrencyButton = CurrencyButton(title: "Base", color: .white, background: .systemBlue)
-  var conversionCurrencyButton = CurrencyButton(title: "Conversion", color: .white, background: .systemRed)
-  var currencyTextView = CurrencyTextView()
-  
-  var currencyToolbarConversion: UIStackView = {
+  var toolbarContainer: UIStackView = {
     let stack = UIStackView()
     stack.translatesAutoresizingMaskIntoConstraints = false
     stack.axis = .horizontal
     stack.distribution = .fillEqually
-    stack.spacing = 12
+    stack.spacing = K.Sizes.medSpace
     return stack
   }()
-  
-  // MARK: - Sizes
-  
-  let smallSpace: CGFloat = 8
-  let medSpace: CGFloat = 12
-  let largeSpace: CGFloat = 24
-  let toolbarHeight: CGFloat = 72
   
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemGray5
+    
     applyLayouts()
   }
   
   // MARK: - Configurations
   
   private func configureTextView() {
-    currencyTextView.delegate = self
+    inputTextView.delegate = self
   }
   
 }
@@ -52,50 +48,62 @@ class ViewController: UIViewController {
 // MARK: - UITextViewDelegate
 
 extension ViewController: UITextViewDelegate {
-  
   // TODO: Determine if this is needed
-  
 }
 
 
 // MARK: - Layout
 
-fileprivate extension ViewController {
+private extension ViewController {
   
   func applyLayouts() {
     layoutToolbarContainer()
     layoutToolbarButtons()
     layoutTextField()
+    layoutConvertButton()
   }
   
   // MARK: - Toolbar
   
   func layoutToolbarContainer() {
-    view.addSubview(currencyToolbarConversion)
+    view.addSubview(toolbarContainer)
     
     NSLayoutConstraint.activate([
-      currencyToolbarConversion.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: medSpace),
-      currencyToolbarConversion.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: medSpace),
-      currencyToolbarConversion.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -medSpace),
-      currencyToolbarConversion.heightAnchor.constraint(equalToConstant: toolbarHeight)
+      toolbarContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: K.Sizes.medSpace),
+      toolbarContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.medSpace),
+      toolbarContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.medSpace)),
+      toolbarContainer.heightAnchor.constraint(equalToConstant: K.Sizes.primaryToolbarHeight)
     ])
   }
   
   func layoutToolbarButtons() {
-    currencyToolbarConversion.addArrangedSubview(baseCurrencyButton)
-    currencyToolbarConversion.addArrangedSubview(conversionCurrencyButton)
+    toolbarContainer.addArrangedSubview(inputButton)
+    toolbarContainer.addArrangedSubview(outputButton)
   }
   
-  // MARK: - Text Field
+  // MARK: - Text Fields
   
   func layoutTextField() {
-    view.addSubview(currencyTextView)
+    view.addSubview(inputTextView)
     
     NSLayoutConstraint.activate([
-      currencyTextView.topAnchor.constraint(equalTo: currencyToolbarConversion.bottomAnchor, constant: medSpace),
-      currencyTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: medSpace),
-      currencyTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -medSpace),
-      currencyTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -largeSpace)
+      inputTextView.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: K.Sizes.medSpace),
+      inputTextView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.medSpace),
+      inputTextView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.medSpace)),
+      inputTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight)
+    ])
+  }
+  
+  // MARK: - Conversion Button
+  
+  func layoutConvertButton() {
+    view.addSubview(convertButton)
+    
+    NSLayoutConstraint.activate([
+      convertButton.heightAnchor.constraint(equalToConstant: K.Sizes.convertButtonHeight),
+      convertButton.leadingAnchor.constraint(equalTo: inputTextView.leadingAnchor),
+      convertButton.trailingAnchor.constraint(equalTo: inputTextView.trailingAnchor),
+      convertButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
   }
   

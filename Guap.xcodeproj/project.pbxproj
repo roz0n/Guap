@@ -16,8 +16,10 @@
 		23BEB048270E57B300BCCA71 /* GuapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB047270E57B300BCCA71 /* GuapTests.swift */; };
 		23BEB052270E57B300BCCA71 /* GuapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB051270E57B300BCCA71 /* GuapUITests.swift */; };
 		23BEB054270E57B300BCCA71 /* GuapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB053270E57B300BCCA71 /* GuapUITestsLaunchTests.swift */; };
-		23BEB065270E8F0C00BCCA71 /* CurrencyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB064270E8F0C00BCCA71 /* CurrencyButton.swift */; };
-		23BEB067270E991100BCCA71 /* CurrencyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB066270E991100BCCA71 /* CurrencyTextView.swift */; };
+		23BEB065270E8F0C00BCCA71 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB064270E8F0C00BCCA71 /* PrimaryButton.swift */; };
+		23BEB067270E991100BCCA71 /* InputCurrencyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB066270E991100BCCA71 /* InputCurrencyTextView.swift */; };
+		23BEB069270EA4E000BCCA71 /* OutputCurrencyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB068270EA4E000BCCA71 /* OutputCurrencyLabel.swift */; };
+		23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB06B270EA6FB00BCCA71 /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,8 +53,10 @@
 		23BEB04D270E57B300BCCA71 /* GuapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BEB051270E57B300BCCA71 /* GuapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuapUITests.swift; sourceTree = "<group>"; };
 		23BEB053270E57B300BCCA71 /* GuapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuapUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		23BEB064270E8F0C00BCCA71 /* CurrencyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyButton.swift; sourceTree = "<group>"; };
-		23BEB066270E991100BCCA71 /* CurrencyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextView.swift; sourceTree = "<group>"; };
+		23BEB064270E8F0C00BCCA71 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		23BEB066270E991100BCCA71 /* InputCurrencyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCurrencyTextView.swift; sourceTree = "<group>"; };
+		23BEB068270EA4E000BCCA71 /* OutputCurrencyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutputCurrencyLabel.swift; sourceTree = "<group>"; };
+		23BEB06B270EA6FB00BCCA71 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,7 @@
 		23BEB02F270E57B100BCCA71 /* Guap */ = {
 			isa = PBXGroup;
 			children = (
+				23BEB06A270EA6EF00BCCA71 /* Constants */,
 				23BEB063270E8C2B00BCCA71 /* Views */,
 				23BEB030270E57B100BCCA71 /* AppDelegate.swift */,
 				23BEB032270E57B100BCCA71 /* SceneDelegate.swift */,
@@ -135,10 +140,19 @@
 		23BEB063270E8C2B00BCCA71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				23BEB064270E8F0C00BCCA71 /* CurrencyButton.swift */,
-				23BEB066270E991100BCCA71 /* CurrencyTextView.swift */,
+				23BEB064270E8F0C00BCCA71 /* PrimaryButton.swift */,
+				23BEB066270E991100BCCA71 /* InputCurrencyTextView.swift */,
+				23BEB068270EA4E000BCCA71 /* OutputCurrencyLabel.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		23BEB06A270EA6EF00BCCA71 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB06B270EA6FB00BCCA71 /* K.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,9 +287,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BEB035270E57B100BCCA71 /* ViewController.swift in Sources */,
+				23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */,
 				23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */,
-				23BEB067270E991100BCCA71 /* CurrencyTextView.swift in Sources */,
-				23BEB065270E8F0C00BCCA71 /* CurrencyButton.swift in Sources */,
+				23BEB069270EA4E000BCCA71 /* OutputCurrencyLabel.swift in Sources */,
+				23BEB067270E991100BCCA71 /* InputCurrencyTextView.swift in Sources */,
+				23BEB065270E8F0C00BCCA71 /* PrimaryButton.swift in Sources */,
 				23BEB033270E57B100BCCA71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
