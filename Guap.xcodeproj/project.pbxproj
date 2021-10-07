@@ -1,0 +1,645 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB030270E57B100BCCA71 /* AppDelegate.swift */; };
+		23BEB033270E57B100BCCA71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB032270E57B100BCCA71 /* SceneDelegate.swift */; };
+		23BEB035270E57B100BCCA71 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB034270E57B100BCCA71 /* ViewController.swift */; };
+		23BEB038270E57B100BCCA71 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BEB036270E57B100BCCA71 /* Main.storyboard */; };
+		23BEB03A270E57B300BCCA71 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23BEB039270E57B300BCCA71 /* Assets.xcassets */; };
+		23BEB03D270E57B300BCCA71 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BEB03B270E57B300BCCA71 /* LaunchScreen.storyboard */; };
+		23BEB048270E57B300BCCA71 /* GuapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB047270E57B300BCCA71 /* GuapTests.swift */; };
+		23BEB052270E57B300BCCA71 /* GuapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB051270E57B300BCCA71 /* GuapUITests.swift */; };
+		23BEB054270E57B300BCCA71 /* GuapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB053270E57B300BCCA71 /* GuapUITestsLaunchTests.swift */; };
+		23BEB065270E8F0C00BCCA71 /* CurrencyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB064270E8F0C00BCCA71 /* CurrencyButton.swift */; };
+		23BEB067270E991100BCCA71 /* CurrencyTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB066270E991100BCCA71 /* CurrencyTextView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		23BEB044270E57B300BCCA71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23BEB025270E57B100BCCA71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23BEB02C270E57B100BCCA71;
+			remoteInfo = Guap;
+		};
+		23BEB04E270E57B300BCCA71 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 23BEB025270E57B100BCCA71 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 23BEB02C270E57B100BCCA71;
+			remoteInfo = Guap;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		23BEB02D270E57B100BCCA71 /* Guap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		23BEB030270E57B100BCCA71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		23BEB032270E57B100BCCA71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		23BEB034270E57B100BCCA71 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		23BEB037270E57B100BCCA71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		23BEB039270E57B300BCCA71 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		23BEB03C270E57B300BCCA71 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		23BEB03E270E57B300BCCA71 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23BEB043270E57B300BCCA71 /* GuapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23BEB047270E57B300BCCA71 /* GuapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuapTests.swift; sourceTree = "<group>"; };
+		23BEB04D270E57B300BCCA71 /* GuapUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuapUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		23BEB051270E57B300BCCA71 /* GuapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuapUITests.swift; sourceTree = "<group>"; };
+		23BEB053270E57B300BCCA71 /* GuapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuapUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		23BEB064270E8F0C00BCCA71 /* CurrencyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyButton.swift; sourceTree = "<group>"; };
+		23BEB066270E991100BCCA71 /* CurrencyTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTextView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		23BEB02A270E57B100BCCA71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23BEB040270E57B300BCCA71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23BEB04A270E57B300BCCA71 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		23BEB024270E57B100BCCA71 = {
+			isa = PBXGroup;
+			children = (
+				23BEB02F270E57B100BCCA71 /* Guap */,
+				23BEB046270E57B300BCCA71 /* GuapTests */,
+				23BEB050270E57B300BCCA71 /* GuapUITests */,
+				23BEB02E270E57B100BCCA71 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		23BEB02E270E57B100BCCA71 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB02D270E57B100BCCA71 /* Guap.app */,
+				23BEB043270E57B300BCCA71 /* GuapTests.xctest */,
+				23BEB04D270E57B300BCCA71 /* GuapUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		23BEB02F270E57B100BCCA71 /* Guap */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB063270E8C2B00BCCA71 /* Views */,
+				23BEB030270E57B100BCCA71 /* AppDelegate.swift */,
+				23BEB032270E57B100BCCA71 /* SceneDelegate.swift */,
+				23BEB034270E57B100BCCA71 /* ViewController.swift */,
+				23BEB036270E57B100BCCA71 /* Main.storyboard */,
+				23BEB039270E57B300BCCA71 /* Assets.xcassets */,
+				23BEB03B270E57B300BCCA71 /* LaunchScreen.storyboard */,
+				23BEB03E270E57B300BCCA71 /* Info.plist */,
+			);
+			path = Guap;
+			sourceTree = "<group>";
+		};
+		23BEB046270E57B300BCCA71 /* GuapTests */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB047270E57B300BCCA71 /* GuapTests.swift */,
+			);
+			path = GuapTests;
+			sourceTree = "<group>";
+		};
+		23BEB050270E57B300BCCA71 /* GuapUITests */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB051270E57B300BCCA71 /* GuapUITests.swift */,
+				23BEB053270E57B300BCCA71 /* GuapUITestsLaunchTests.swift */,
+			);
+			path = GuapUITests;
+			sourceTree = "<group>";
+		};
+		23BEB063270E8C2B00BCCA71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB064270E8F0C00BCCA71 /* CurrencyButton.swift */,
+				23BEB066270E991100BCCA71 /* CurrencyTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		23BEB02C270E57B100BCCA71 /* Guap */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23BEB057270E57B300BCCA71 /* Build configuration list for PBXNativeTarget "Guap" */;
+			buildPhases = (
+				23BEB029270E57B100BCCA71 /* Sources */,
+				23BEB02A270E57B100BCCA71 /* Frameworks */,
+				23BEB02B270E57B100BCCA71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Guap;
+			productName = Guap;
+			productReference = 23BEB02D270E57B100BCCA71 /* Guap.app */;
+			productType = "com.apple.product-type.application";
+		};
+		23BEB042270E57B300BCCA71 /* GuapTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23BEB05A270E57B300BCCA71 /* Build configuration list for PBXNativeTarget "GuapTests" */;
+			buildPhases = (
+				23BEB03F270E57B300BCCA71 /* Sources */,
+				23BEB040270E57B300BCCA71 /* Frameworks */,
+				23BEB041270E57B300BCCA71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23BEB045270E57B300BCCA71 /* PBXTargetDependency */,
+			);
+			name = GuapTests;
+			productName = GuapTests;
+			productReference = 23BEB043270E57B300BCCA71 /* GuapTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		23BEB04C270E57B300BCCA71 /* GuapUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 23BEB05D270E57B300BCCA71 /* Build configuration list for PBXNativeTarget "GuapUITests" */;
+			buildPhases = (
+				23BEB049270E57B300BCCA71 /* Sources */,
+				23BEB04A270E57B300BCCA71 /* Frameworks */,
+				23BEB04B270E57B300BCCA71 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				23BEB04F270E57B300BCCA71 /* PBXTargetDependency */,
+			);
+			name = GuapUITests;
+			productName = GuapUITests;
+			productReference = 23BEB04D270E57B300BCCA71 /* GuapUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		23BEB025270E57B100BCCA71 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					23BEB02C270E57B100BCCA71 = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					23BEB042270E57B300BCCA71 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 23BEB02C270E57B100BCCA71;
+					};
+					23BEB04C270E57B300BCCA71 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 23BEB02C270E57B100BCCA71;
+					};
+				};
+			};
+			buildConfigurationList = 23BEB028270E57B100BCCA71 /* Build configuration list for PBXProject "Guap" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 23BEB024270E57B100BCCA71;
+			productRefGroup = 23BEB02E270E57B100BCCA71 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				23BEB02C270E57B100BCCA71 /* Guap */,
+				23BEB042270E57B300BCCA71 /* GuapTests */,
+				23BEB04C270E57B300BCCA71 /* GuapUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		23BEB02B270E57B100BCCA71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23BEB03D270E57B300BCCA71 /* LaunchScreen.storyboard in Resources */,
+				23BEB03A270E57B300BCCA71 /* Assets.xcassets in Resources */,
+				23BEB038270E57B100BCCA71 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23BEB041270E57B300BCCA71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23BEB04B270E57B300BCCA71 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		23BEB029270E57B100BCCA71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23BEB035270E57B100BCCA71 /* ViewController.swift in Sources */,
+				23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */,
+				23BEB067270E991100BCCA71 /* CurrencyTextView.swift in Sources */,
+				23BEB065270E8F0C00BCCA71 /* CurrencyButton.swift in Sources */,
+				23BEB033270E57B100BCCA71 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23BEB03F270E57B300BCCA71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23BEB048270E57B300BCCA71 /* GuapTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		23BEB049270E57B300BCCA71 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23BEB052270E57B300BCCA71 /* GuapUITests.swift in Sources */,
+				23BEB054270E57B300BCCA71 /* GuapUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		23BEB045270E57B300BCCA71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23BEB02C270E57B100BCCA71 /* Guap */;
+			targetProxy = 23BEB044270E57B300BCCA71 /* PBXContainerItemProxy */;
+		};
+		23BEB04F270E57B300BCCA71 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 23BEB02C270E57B100BCCA71 /* Guap */;
+			targetProxy = 23BEB04E270E57B300BCCA71 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		23BEB036270E57B100BCCA71 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23BEB037270E57B100BCCA71 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		23BEB03B270E57B300BCCA71 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				23BEB03C270E57B300BCCA71 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		23BEB055270E57B300BCCA71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		23BEB056270E57B300BCCA71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		23BEB058270E57B300BCCA71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYK6GDE7V9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Guap/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notenoughscience.Guap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		23BEB059270E57B300BCCA71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYK6GDE7V9;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Guap/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notenoughscience.Guap;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		23BEB05B270E57B300BCCA71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYK6GDE7V9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notenoughscience.GuapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guap.app/Guap";
+			};
+			name = Debug;
+		};
+		23BEB05C270E57B300BCCA71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYK6GDE7V9;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notenoughscience.GuapTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Guap.app/Guap";
+			};
+			name = Release;
+		};
+		23BEB05E270E57B300BCCA71 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYK6GDE7V9;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notenoughscience.GuapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Guap;
+			};
+			name = Debug;
+		};
+		23BEB05F270E57B300BCCA71 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RYK6GDE7V9;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.notenoughscience.GuapUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Guap;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		23BEB028270E57B100BCCA71 /* Build configuration list for PBXProject "Guap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23BEB055270E57B300BCCA71 /* Debug */,
+				23BEB056270E57B300BCCA71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23BEB057270E57B300BCCA71 /* Build configuration list for PBXNativeTarget "Guap" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23BEB058270E57B300BCCA71 /* Debug */,
+				23BEB059270E57B300BCCA71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23BEB05A270E57B300BCCA71 /* Build configuration list for PBXNativeTarget "GuapTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23BEB05B270E57B300BCCA71 /* Debug */,
+				23BEB05C270E57B300BCCA71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		23BEB05D270E57B300BCCA71 /* Build configuration list for PBXNativeTarget "GuapUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				23BEB05E270E57B300BCCA71 /* Debug */,
+				23BEB05F270E57B300BCCA71 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 23BEB025270E57B100BCCA71 /* Project object */;
+}
