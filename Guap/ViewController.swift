@@ -13,8 +13,8 @@ class ViewController: UIViewController {
   
   // MARK: - Views
   
-  var baseCurrencyButton = CurrencyButton(title: "Base", titleColor: .white, labelColor: .systemGray6)
-  var conversionCurrencyButton = CurrencyButton(title: "Conversion", titleColor: .white, labelColor: .systemGray6)
+  var baseCurrencyButton = CurrencyButton(title: "Base", color: .white, background: .systemBlue)
+  var conversionCurrencyButton = CurrencyButton(title: "Conversion", color: .white, background: .systemRed)
   var currencyTextView = CurrencyTextView()
   
   var currencyToolbarConversion: UIStackView = {

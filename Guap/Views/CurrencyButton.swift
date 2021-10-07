@@ -11,20 +11,24 @@ class CurrencyButton: UIButton {
   
   // MARK: - Initializers
   
-  init(title: String, titleColor: UIColor, labelColor: UIColor) {
+  init(title: String, color: UIColor, background: UIColor) {
     super.init(frame: .zero)
-    
-    setTitle(title, for: .normal)
-    setTitleColor(titleColor, for: .normal)
-    setTitleColor(self.titleColor(for: .normal)?.withAlphaComponent(0.5), for: .highlighted)
-    titleLabel?.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .bold)
-    
-    backgroundColor = labelColor
-    layer.cornerRadius = 12
+    configureButton(title: title, color: color, background: background)
   }
   
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+  
+  // MARK: - Configurations
+  
+  private func configureButton(title: String, color: UIColor, background: UIColor) {
+    setTitle(title, for: .normal)
+    setTitleColor(color, for: .normal)
+    setTitleColor(self.titleColor(for: .normal)?.withAlphaComponent(0.5), for: .highlighted)
+    titleLabel?.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .bold)
+    backgroundColor = background
+    layer.cornerRadius = 12
   }
   
 }
