@@ -11,14 +11,13 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
-  var currencySelector = CurrencySelectorViewController()
-  var inputButton = PrimaryButton(title: K.Labels.inputButton, color: .white, background: .systemBlue)
-  var outputButton = PrimaryButton(title: K.Labels.outputButton, color: .white, background: .systemRed)
+  var baseCurrencyButton = PrimaryButton(title: K.Labels.inputButton, color: .white, background: .black.withAlphaComponent(0.75))
+  var outputCurrencyButton = PrimaryButton(title: K.Labels.outputButton, color: .white, background: .black.withAlphaComponent(0.75))
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
-  var inputTextView = ConverterTextView()
-  var outputTextView = ConverterTextView()
+  var baseValueTextView = ConverterTextView()
+  var targetValueTextView = ConverterTextView()
   
-  // MARK: - Views
+  // MARK: -
   
   var toolbarContainer: UIStackView = {
     let stack = UIStackView()
@@ -51,7 +50,7 @@ class ConverterViewController: UIViewController {
   // MARK: - Configurations
   
   private func configureTextView() {
-    inputTextView.delegate = self
+    baseValueTextView.delegate = self
   }
   
   // MARK: - Gestures
@@ -70,33 +69,35 @@ class ConverterViewController: UIViewController {
     let tapInputGesture = UITapGestureRecognizer(target: self, action: #selector(tappedInputButton))
     let tapOutputGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOutputButton))
     
-    inputButton.addGestureRecognizer(tapInputGesture)
-    outputButton.addGestureRecognizer(tapOutputGesture)
+    baseCurrencyButton.addGestureRecognizer(tapInputGesture)
+    outputCurrencyButton.addGestureRecognizer(tapOutputGesture)
   }
   
   // MARK: - Selectors
   
   @objc func tappedConvertButton() {
     print("Convert button tapped")
-    updateOutputLabel()
   }
   
   @objc func tappedInputButton() {
-    present(currencySelector, animated: true) {
+    present(createCurrencySelector(title: "Select Base Currency"), animated: true) {
       print("Presented currency selector: input")
     }
   }
   
   @objc func tappedOutputButton() {
-    present(currencySelector, animated: true) {
+    present(createCurrencySelector(title: "Select Target Currency"), animated: true) {
       print("Presented currency selector: output")
     }
   }
   
   // MARK: - Helpers
   
-  private func updateOutputLabel() {
-    //    outputLabel.text = "53453.00"
+  private func createCurrencySelector(title: String) -> UINavigationController {
+    let rootViewController = CurrencySelectorViewController()
+    rootViewController.title = title
+    
+    return UINavigationController(rootViewController: rootViewController)
   }
   
 }
@@ -134,8 +135,8 @@ private extension ConverterViewController {
   }
   
   func layoutToolbarButtons() {
-    toolbarContainer.addArrangedSubview(inputButton)
-    toolbarContainer.addArrangedSubview(outputButton)
+    toolbarContainer.addArrangedSubview(baseCurrencyButton)
+    toolbarContainer.addArrangedSubview(outputCurrencyButton)
   }
   
   // MARK: - Text Views
@@ -152,8 +153,8 @@ private extension ConverterViewController {
   }
   
   func layoutConversionTextViews() {
-    conversionContainer.addArrangedSubview(inputTextView)
-    conversionContainer.addArrangedSubview(outputTextView)
+    conversionContainer.addArrangedSubview(baseValueTextView)
+    conversionContainer.addArrangedSubview(targetValueTextView)
   }
   
   // MARK: - Convert Button
