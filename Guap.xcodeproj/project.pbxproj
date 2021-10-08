@@ -23,6 +23,7 @@
 		23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */; };
 		23BEB07C270ED05500BCCA71 /* CurrencySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */; };
 		23BEB07F270ED0FA00BCCA71 /* Veximoji in Frameworks */ = {isa = PBXBuildFile; productRef = 23BEB07E270ED0FA00BCCA71 /* Veximoji */; };
+		23BEB0822710DB2900BCCA71 /* ConversionParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB0812710DB2900BCCA71 /* ConversionParameter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		23BEB074270EC72900BCCA71 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
 		23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrency.swift; sourceTree = "<group>"; };
 		23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectorViewController.swift; sourceTree = "<group>"; };
+		23BEB0812710DB2900BCCA71 /* ConversionParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionParameter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		23BEB02F270E57B100BCCA71 /* Guap */ = {
 			isa = PBXGroup;
 			children = (
+				23BEB0802710DB0900BCCA71 /* Types */,
 				23BEB076270EC7C500BCCA71 /* Models */,
 				23BEB073270EC6F200BCCA71 /* Data */,
 				23BEB070270EBAAF00BCCA71 /* Managers */,
@@ -209,6 +212,14 @@
 				23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		23BEB0802710DB0900BCCA71 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB0812710DB2900BCCA71 /* ConversionParameter.swift */,
+			);
+			path = Types;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BEB035270E57B100BCCA71 /* ConverterViewController.swift in Sources */,
+				23BEB0822710DB2900BCCA71 /* ConversionParameter.swift in Sources */,
 				23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */,
 				23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */,
 				23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */,

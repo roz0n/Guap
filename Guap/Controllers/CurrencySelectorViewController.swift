@@ -13,8 +13,24 @@ class CurrencySelectorViewController: UITableViewController {
   // MARK: - Properties
   
   static let reuseIdentifier = "currencySelectorCell"
+  
   let dataManager = FiatCurrencyDataManager()
+  var selectionHandler: ((_: FiatCurrency?, _ type: ConversionParameter?) -> Void)
+  var selectionType: ConversionParameter
   var currencies: [FiatCurrency]?
+  
+  // MARK: - Initializers
+  
+  init(selectionHandler: @escaping ((_: FiatCurrency?, _ type: ConversionParameter?) -> Void), type selectionType: ConversionParameter) {
+    self.selectionHandler = selectionHandler
+    self.selectionType = selectionType
+    
+    super.init(nibName: nil, bundle: nil)
+  }
+  
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
   
   // MARK: - Lifecycle
   
@@ -55,6 +71,14 @@ extension CurrencySelectorViewController {
     }
     
     return cell
+  }
+  
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let data = currencies?[indexPath.row]
+    
+    dismiss(animated: true) { [weak self] in
+      self?.selectionHandler(data, self?.selectionType)
+    }
   }
   
 }

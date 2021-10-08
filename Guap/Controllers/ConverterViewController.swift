@@ -48,7 +48,7 @@ class ConverterViewController: UIViewController {
   // MARK: - Configurations
   
   private func configureTextView() {
-//    baseValueTextView.delegate = self
+    //    baseValueTextView.delegate = self
   }
   
   // MARK: - Gestures
@@ -64,11 +64,11 @@ class ConverterViewController: UIViewController {
   }
   
   private func addCurrencySelectionGestures() {
-    let tapInputGesture = UITapGestureRecognizer(target: self, action: #selector(tappedInputButton))
-    let tapOutputGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOutputButton))
+    let tapBaseGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBaseButton))
+    let tappedTargetGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTargetButton))
     
-    baseCurrencyButton.addGestureRecognizer(tapInputGesture)
-    targetCurrencyButton.addGestureRecognizer(tapOutputGesture)
+    baseCurrencyButton.addGestureRecognizer(tapBaseGesture)
+    targetCurrencyButton.addGestureRecognizer(tappedTargetGesture)
   }
   
   // MARK: - Selectors
@@ -77,25 +77,29 @@ class ConverterViewController: UIViewController {
     print("Convert button tapped")
   }
   
-  @objc func tappedInputButton() {
-    present(createCurrencySelector(title: "Select Base Currency"), animated: true) {
+  @objc func tappedBaseButton() {
+    present(createCurrencySelector(title: "Select Base Currency", type: .base), animated: true) {
       print("Presented currency selector: input")
     }
   }
   
-  @objc func tappedOutputButton() {
-    present(createCurrencySelector(title: "Select Target Currency"), animated: true) {
+  @objc func tappedTargetButton() {
+    present(createCurrencySelector(title: "Select Target Currency", type: .target), animated: true) {
       print("Presented currency selector: output")
     }
   }
   
   // MARK: - Helpers
   
-  private func createCurrencySelector(title: String) -> UINavigationController {
-    let rootViewController = CurrencySelectorViewController()
+  private func createCurrencySelector(title: String, type: ConversionParameter) -> UINavigationController {
+    let rootViewController = CurrencySelectorViewController(selectionHandler: handleCurrencySelection(_:_:), type: type)
     rootViewController.title = title
     
     return UINavigationController(rootViewController: rootViewController)
+  }
+  
+  func handleCurrencySelection(_ data: FiatCurrency?, _ type: ConversionParameter?) {
+    print("Selected currency \(data) for \(type)")
   }
   
 }
