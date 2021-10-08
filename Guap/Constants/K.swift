@@ -29,7 +29,7 @@ struct K {
     
     static let primaryToolbarHeight: CGFloat = 72
     static let convertButtonHeight: CGFloat = 72
-    static let inputTextViewHeight: CGFloat = 110
+    static let inputTextViewHeight: CGFloat = 100
     static let keyboardToolbarHeight: CGFloat = 36
     
     // MARK: - Fonts
@@ -37,14 +37,12 @@ struct K {
     static let smText: CGFloat = 16
     static let mdText: CGFloat = 20
     static let lgText: CGFloat = 24
-    static let xlText: CGFloat = 32
+    static let xlText: CGFloat = 48
   }
   
   // MARK: - Strings
   
   struct Labels {
-    static let inputButton = "Input"
-    static let outputButton = "Output"
     static let convertButton = "Convert"
   }
   

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ConverterTextView: UITextView {
+class ConverterTextView: UITextField {
   
   // MARK: - Properties
   
@@ -17,8 +17,13 @@ class ConverterTextView: UITextView {
   
   // MARK: - Initializers
   
-  override init(frame: CGRect, textContainer: NSTextContainer?) {
-    super.init(frame: frame, textContainer: textContainer)
+//  override init(frame: CGRect, textContainer: NSTextContainer?) {
+//    super.init(frame: frame, textContainer: textContainer)
+//
+//  }
+  
+  override init(frame: CGRect) {
+    super.init(frame: frame)
     translatesAutoresizingMaskIntoConstraints = false
     
     configureTextView()
@@ -32,14 +37,10 @@ class ConverterTextView: UITextView {
   // MARK: - Configurations
   
   private func configureTextView() {
-    font = UIFont.systemFont(ofSize: K.Sizes.mdText, weight: .bold)
-    textContainer.maximumNumberOfLines = 3
-    textContainer.lineBreakMode = .byTruncatingMiddle
-    textContainerInset = UIEdgeInsets(top: K.Sizes.mdSpace, left: K.Sizes.smSpace, bottom: K.Sizes.mdSpace, right: K.Sizes.smSpace)
+    font = UIFont.monospacedSystemFont(ofSize: K.Sizes.xlText, weight: .bold)
     keyboardType = .decimalPad
-    
     layer.cornerRadius = K.Sizes.mdRadius
-    backgroundColor = .systemGray6
+    backgroundColor = .systemGray5
   }
   
   private func configureKeyboard() {

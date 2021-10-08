@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Veximoji
 
 class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
-  var baseCurrencyButton = PrimaryButton(title: K.Labels.inputButton, color: .white, background: .black.withAlphaComponent(0.75))
-  var outputCurrencyButton = PrimaryButton(title: K.Labels.outputButton, color: .white, background: .black.withAlphaComponent(0.75))
+  var baseCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "US")!)   USD", color: .white, background: .systemGray6)
+  var targetCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "JP")!)   JPY", color: .white, background: .systemGray6)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
   var baseValueTextView = ConverterTextView()
   var targetValueTextView = ConverterTextView()
@@ -28,20 +29,17 @@ class ConverterViewController: UIViewController {
     return stack
   }()
   
-  var conversionContainer: UIStackView = {
-    let stack = UIStackView()
-    stack.translatesAutoresizingMaskIntoConstraints = false
-    stack.axis = .vertical
-    stack.distribution = .fillEqually
-    stack.spacing = K.Sizes.mdSpace
-    return stack
+  var conversionContainer: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
   }()
   
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .systemGray5
+    view.backgroundColor = .black.withAlphaComponent(0.75)
     
     applyLayouts()
     applyGestures()
@@ -50,7 +48,7 @@ class ConverterViewController: UIViewController {
   // MARK: - Configurations
   
   private func configureTextView() {
-    baseValueTextView.delegate = self
+//    baseValueTextView.delegate = self
   }
   
   // MARK: - Gestures
@@ -70,7 +68,7 @@ class ConverterViewController: UIViewController {
     let tapOutputGesture = UITapGestureRecognizer(target: self, action: #selector(tappedOutputButton))
     
     baseCurrencyButton.addGestureRecognizer(tapInputGesture)
-    outputCurrencyButton.addGestureRecognizer(tapOutputGesture)
+    targetCurrencyButton.addGestureRecognizer(tapOutputGesture)
   }
   
   // MARK: - Selectors
@@ -136,7 +134,7 @@ private extension ConverterViewController {
   
   func layoutToolbarButtons() {
     toolbarContainer.addArrangedSubview(baseCurrencyButton)
-    toolbarContainer.addArrangedSubview(outputCurrencyButton)
+    toolbarContainer.addArrangedSubview(targetCurrencyButton)
   }
   
   // MARK: - Text Views
@@ -153,8 +151,18 @@ private extension ConverterViewController {
   }
   
   func layoutConversionTextViews() {
-    conversionContainer.addArrangedSubview(baseValueTextView)
-    conversionContainer.addArrangedSubview(targetValueTextView)
+    conversionContainer.addSubview(baseValueTextView)
+    conversionContainer.addSubview(targetValueTextView)
+    
+    NSLayoutConstraint.activate([
+      baseValueTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
+      baseValueTextView.widthAnchor.constraint(equalTo: conversionContainer.widthAnchor),
+      baseValueTextView.topAnchor.constraint(equalTo: conversionContainer.topAnchor),
+      
+      targetValueTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
+      targetValueTextView.widthAnchor.constraint(equalTo: conversionContainer.widthAnchor),
+      targetValueTextView.topAnchor.constraint(equalTo: baseValueTextView.bottomAnchor, constant: K.Sizes.mdSpace),
+    ])
   }
   
   // MARK: - Convert Button
