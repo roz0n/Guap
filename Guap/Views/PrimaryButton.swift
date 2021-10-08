@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Veximoji
 
 class PrimaryButton: UIButton {
   
@@ -32,6 +33,13 @@ class PrimaryButton: UIButton {
     
     backgroundColor = background
     layer.cornerRadius = K.Sizes.mdRadius
+  }
+  
+  // MARK: - Helpers
+  
+  func setButtonTitle(countryCode: String, currencyCode: String) {
+    // It's safe to force-unwrap here
+    setTitle("\(Veximoji.country(code: countryCode) ?? Veximoji.cultural(term: .white)!) \(currencyCode)", for: .normal)
   }
   
 }

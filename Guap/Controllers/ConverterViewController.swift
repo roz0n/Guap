@@ -12,11 +12,28 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
-  var baseCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "US")!)   USD", color: .white, background: .systemGray6)
-  var targetCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "JP")!)   JPY", color: .white, background: .systemGray6)
+  var baseCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "US")!) USD", color: .white, background: .systemGray6)
+  var targetCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "JP")!) JPY", color: .white, background: .systemGray6)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
+  
   var baseValueTextView = ConverterTextView()
   var targetValueTextView = ConverterTextView()
+  
+  var baseCurrencyData: FiatCurrency? {
+    didSet {
+      if let countryCode = baseCurrencyData?.iso31661, let currencyCode = baseCurrencyData?.iso4217 {
+        baseCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
+      }
+    }
+  }
+  
+  var targetCurrencyData: FiatCurrency? {
+    didSet {
+      if let countryCode = baseCurrencyData?.iso31661, let currencyCode = baseCurrencyData?.iso4217 {
+        targetCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
+      }
+    }
+  }
   
   // MARK: -
   
@@ -99,7 +116,16 @@ class ConverterViewController: UIViewController {
   }
   
   func handleCurrencySelection(_ data: FiatCurrency?, _ type: ConversionParameter?) {
-    print("Selected currency \(data) for \(type)")
+    guard let type = type else {
+      return
+    }
+    
+    switch type {
+      case .base:
+        baseCurrencyData = data
+      case .target:
+        targetCurrencyData = data
+    }
   }
   
 }
