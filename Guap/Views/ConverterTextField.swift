@@ -36,7 +36,6 @@ class ConverterTextField: UITextField {
     textFieldLabelText = label
     super.init(frame: .zero)
     translatesAutoresizingMaskIntoConstraints = false
-    
     configureTextField()
     configureTextFieldLabel()
     configureKeyboard()
@@ -54,13 +53,13 @@ class ConverterTextField: UITextField {
     keyboardType = .decimalPad
     layer.cornerRadius = K.Sizes.mdRadius
     backgroundColor = .systemGray5
+    adjustsFontSizeToFitWidth = true
     autocorrectionType = .no
     placeholder = "0.0"
     leftView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
     rightView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
     leftViewMode = .always
     rightViewMode = .always
-    adjustsFontSizeToFitWidth = true
   }
   
   private func configureTextFieldLabel() {

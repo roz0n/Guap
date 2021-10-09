@@ -38,8 +38,9 @@ class PrimaryButton: UIButton {
   // MARK: - Helpers
   
   func setButtonTitle(countryCode: String, currencyCode: String) {
+    let spacer = "   "
     // It's safe to force-unwrap here
-    setTitle("\(Veximoji.country(code: countryCode) ?? Veximoji.cultural(term: .white)!) \(currencyCode)", for: .normal)
+    setTitle("\(Veximoji.country(code: countryCode) ?? Veximoji.cultural(term: .white)!)\(spacer)\(currencyCode)", for: .normal)
   }
   
 }

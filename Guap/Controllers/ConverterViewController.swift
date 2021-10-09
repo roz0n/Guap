@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Veximoji
 
 class ConverterViewController: UIViewController {
   
@@ -142,12 +141,24 @@ class ConverterViewController: UIViewController {
   
 }
 
-// MARK: - UITextViewDelegate
+// MARK: - Data Fetching
 
-extension ConverterViewController: UITextViewDelegate {
-  // TODO: Determine if this is needed
+private extension ConverterViewController {
+  
+  func fetchFiatCurrencies() {
+    guard currencies == nil else {
+      return
+    }
+    
+    dataManager.getCurrenciesList { [weak self] data in
+      // TODO: Perform O(1) lookup here with a Set instead of using .first
+      self?.baseCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "USD" })
+      self?.targetCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "JPY" })
+      self?.currencies = data
+    }
+  }
+  
 }
-
 
 // MARK: - Layout
 
@@ -218,25 +229,6 @@ private extension ConverterViewController {
       convertButton.trailingAnchor.constraint(equalTo: toolbarContainer.trailingAnchor),
       convertButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
-  }
-  
-}
-
-// MARK: - Data Fetching
-
-private extension ConverterViewController {
-  
-  func fetchFiatCurrencies() {
-    guard currencies == nil else {
-      return
-    }
-    
-    dataManager.getCurrenciesList { [weak self] data in
-      // TODO: Perform O(1) lookup here with a Set instead of using .first
-      self?.baseCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "USD" })
-      self?.targetCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "JPY" })
-      self?.currencies = data
-    }
   }
   
 }
