@@ -21,7 +21,9 @@ class ConverterViewController: UIViewController {
   
   var baseCurrencyData: FiatCurrency? {
     didSet {
-      if let countryCode = baseCurrencyData?.iso31661, let currencyCode = baseCurrencyData?.iso4217, let currencyName = baseCurrencyData?.currencyName {
+      if let countryCode = baseCurrencyData?.iso31661,
+         let currencyCode = baseCurrencyData?.iso4217,
+         let currencyName = baseCurrencyData?.currencyName {
         baseCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
         baseValueTextView.setTextFieldLabel("Convert from: \(currencyName)")
       }
@@ -30,7 +32,9 @@ class ConverterViewController: UIViewController {
   
   var targetCurrencyData: FiatCurrency? {
     didSet {
-      if let countryCode = targetCurrencyData?.iso31661, let currencyCode = targetCurrencyData?.iso4217, let currencyName = targetCurrencyData?.currencyName {
+      if let countryCode = targetCurrencyData?.iso31661,
+         let currencyCode = targetCurrencyData?.iso4217,
+         let currencyName = targetCurrencyData?.currencyName {
         targetCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
         targetValueTextView.setTextFieldLabel("Convert to: \(currencyName)")
       }

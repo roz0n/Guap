@@ -55,6 +55,12 @@ class ConverterTextField: UITextField {
     layer.cornerRadius = K.Sizes.mdRadius
     backgroundColor = .systemGray5
     autocorrectionType = .no
+    placeholder = "0.0"
+    leftView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
+    rightView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
+    leftViewMode = .always
+    rightViewMode = .always
+    adjustsFontSizeToFitWidth = true
   }
   
   private func configureTextFieldLabel() {
@@ -68,7 +74,9 @@ class ConverterTextField: UITextField {
     keyboardDoneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(tappedDoneButton))
     keyboardCancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(tappedCancelButton))
     
-    guard let toolbar = keyboardToolbar, let doneButton = keyboardDoneButton, let cancelButton = keyboardCancelButton else {
+    guard let toolbar = keyboardToolbar,
+          let doneButton = keyboardDoneButton,
+          let cancelButton = keyboardCancelButton else {
       return
     }
     
