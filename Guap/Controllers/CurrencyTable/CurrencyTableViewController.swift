@@ -11,9 +11,7 @@ import Veximoji
 class CurrencyTableViewController: UITableViewController {
   
   // MARK: - Properties
-  
-  static let reuseIdentifier = "currencySelectorCell"
-  
+    
   let dataManager = FiatCurrencyDataManager()
   var selectionHandler: ((_: FiatCurrency?, _ type: ConverterParameter?) -> Void)
   var selectionType: ConverterParameter
@@ -44,7 +42,7 @@ class CurrencyTableViewController: UITableViewController {
   // MARK: - Configurations
   
   private func configureTableView() {
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: CurrencyTableViewController.reuseIdentifier)
+    tableView.register(CurrencyTableViewCell.self, forCellReuseIdentifier: CurrencyTableViewCell.reuseIdentifier)
   }
   
 }
@@ -62,14 +60,19 @@ extension CurrencyTableViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyTableViewController.reuseIdentifier, for: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyTableViewCell.reuseIdentifier, for: indexPath) as! CurrencyTableViewCell
     let data = currencies?[indexPath.row]
-    let flag = Veximoji.country(code: data?.iso31661) ?? Veximoji.cultural(term: .white)
     
-    if let data = data {
-      cell.textLabel?.text = "\(flag!)\t \t \(data.iso4217) \t \(data.currencyName)"
+    guard let data = data else {
+      return cell
     }
+
+    // It's safe to force-unwrap here
+    let flag = Veximoji.country(code: data.iso31661) ?? Veximoji.international(code: "UN")!
+    let code = data.iso4217
+    let name = data.currencyName
     
+    cell.setLabelText(flag: flag, code: code, name: name)
     return cell
   }
   

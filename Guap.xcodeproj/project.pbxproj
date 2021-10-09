@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23349049271178DE0013DA8B /* CurrencyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23349048271178DE0013DA8B /* CurrencyTableViewCell.swift */; };
 		23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB030270E57B100BCCA71 /* AppDelegate.swift */; };
 		23BEB033270E57B100BCCA71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB032270E57B100BCCA71 /* SceneDelegate.swift */; };
 		23BEB035270E57B100BCCA71 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB034270E57B100BCCA71 /* ConverterViewController.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		23349048271178DE0013DA8B /* CurrencyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewCell.swift; sourceTree = "<group>"; };
 		23BEB02D270E57B100BCCA71 /* Guap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BEB030270E57B100BCCA71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23BEB032270E57B100BCCA71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		233490442711783E0013DA8B /* Converter */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB034270E57B100BCCA71 /* ConverterViewController.swift */,
+			);
+			path = Converter;
+			sourceTree = "<group>";
+		};
+		233490452711784C0013DA8B /* CurrencyTable */ = {
+			isa = PBXGroup;
+			children = (
+				233490462711785A0013DA8B /* Cells */,
+				23BEB07B270ED05500BCCA71 /* CurrencyTableViewController.swift */,
+			);
+			path = CurrencyTable;
+			sourceTree = "<group>";
+		};
+		233490462711785A0013DA8B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				23349048271178DE0013DA8B /* CurrencyTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		23349047271178610013DA8B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				23BEB063270E8C2B00BCCA71 /* Views */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		23BEB024270E57B100BCCA71 = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +158,7 @@
 				23BEB06E270EAD2400BCCA71 /* Application */,
 				23BEB06D270EAD1700BCCA71 /* Controllers */,
 				23BEB06A270EA6EF00BCCA71 /* Constants */,
-				23BEB063270E8C2B00BCCA71 /* Views */,
+				23349047271178610013DA8B /* Shared */,
 				23BEB03E270E57B300BCCA71 /* Info.plist */,
 			);
 			path = Guap;
@@ -166,8 +201,8 @@
 		23BEB06D270EAD1700BCCA71 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				23BEB034270E57B100BCCA71 /* ConverterViewController.swift */,
-				23BEB07B270ED05500BCCA71 /* CurrencyTableViewController.swift */,
+				233490452711784C0013DA8B /* CurrencyTable */,
+				233490442711783E0013DA8B /* Converter */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -364,6 +399,7 @@
 				23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */,
 				23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */,
 				23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */,
+				23349049271178DE0013DA8B /* CurrencyTableViewCell.swift in Sources */,
 				23BEB07C270ED05500BCCA71 /* CurrencyTableViewController.swift in Sources */,
 				23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */,
 				23BEB067270E991100BCCA71 /* ConverterTextField.swift in Sources */,
