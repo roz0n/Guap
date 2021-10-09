@@ -1,5 +1,5 @@
 //
-//  CurrencySelectorViewController.swift
+//  CurrencyTableViewController.swift
 //  Guap
 //
 //  Created by Arnaldo Rozon on 10/7/21.
@@ -8,20 +8,20 @@
 import UIKit
 import Veximoji
 
-class CurrencySelectorViewController: UITableViewController {
+class CurrencyTableViewController: UITableViewController {
   
   // MARK: - Properties
   
   static let reuseIdentifier = "currencySelectorCell"
   
   let dataManager = FiatCurrencyDataManager()
-  var selectionHandler: ((_: FiatCurrency?, _ type: ConversionParameter?) -> Void)
-  var selectionType: ConversionParameter
+  var selectionHandler: ((_: FiatCurrency?, _ type: ConverterParameter?) -> Void)
+  var selectionType: ConverterParameter
   var currencies: [FiatCurrency]?
   
   // MARK: - Initializers
   
-  init(selectionHandler: @escaping ((_: FiatCurrency?, _ type: ConversionParameter?) -> Void), type selectionType: ConversionParameter) {
+  init(selectionHandler: @escaping ((_: FiatCurrency?, _ type: ConverterParameter?) -> Void), type selectionType: ConverterParameter) {
     self.selectionHandler = selectionHandler
     self.selectionType = selectionType
     
@@ -44,14 +44,14 @@ class CurrencySelectorViewController: UITableViewController {
   // MARK: - Configurations
   
   private func configureTableView() {
-    tableView.register(UITableViewCell.self, forCellReuseIdentifier: CurrencySelectorViewController.reuseIdentifier)
+    tableView.register(UITableViewCell.self, forCellReuseIdentifier: CurrencyTableViewController.reuseIdentifier)
   }
   
 }
 
 // MARK: - Table view data source
 
-extension CurrencySelectorViewController {
+extension CurrencyTableViewController {
   
   override func numberOfSections(in tableView: UITableView) -> Int {
     return 1
@@ -62,7 +62,7 @@ extension CurrencySelectorViewController {
   }
   
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: CurrencySelectorViewController.reuseIdentifier, for: indexPath) as UITableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: CurrencyTableViewController.reuseIdentifier, for: indexPath) as UITableViewCell
     let data = currencies?[indexPath.row]
     let flag = Veximoji.country(code: data?.iso31661) ?? Veximoji.cultural(term: .white)
     
@@ -85,7 +85,7 @@ extension CurrencySelectorViewController {
 
 // MARK: - Networking
 
-private extension CurrencySelectorViewController {
+private extension CurrencyTableViewController {
   
   func fetchCurrenciesList() {
     guard currencies == nil else {

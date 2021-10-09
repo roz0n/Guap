@@ -34,6 +34,7 @@ struct K {
     
     // MARK: - Fonts
     
+    static let xsText: CGFloat = 12
     static let smText: CGFloat = 16
     static let mdText: CGFloat = 20
     static let lgText: CGFloat = 24

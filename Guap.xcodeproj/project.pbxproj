@@ -16,14 +16,14 @@
 		23BEB052270E57B300BCCA71 /* GuapUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB051270E57B300BCCA71 /* GuapUITests.swift */; };
 		23BEB054270E57B300BCCA71 /* GuapUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB053270E57B300BCCA71 /* GuapUITestsLaunchTests.swift */; };
 		23BEB065270E8F0C00BCCA71 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB064270E8F0C00BCCA71 /* PrimaryButton.swift */; };
-		23BEB067270E991100BCCA71 /* ConverterTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB066270E991100BCCA71 /* ConverterTextView.swift */; };
+		23BEB067270E991100BCCA71 /* ConverterTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB066270E991100BCCA71 /* ConverterTextField.swift */; };
 		23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB06B270EA6FB00BCCA71 /* K.swift */; };
 		23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB071270EBACA00BCCA71 /* FiatCurrencyDataManager.swift */; };
 		23BEB075270EC72900BCCA71 /* currencies.json in Resources */ = {isa = PBXBuildFile; fileRef = 23BEB074270EC72900BCCA71 /* currencies.json */; };
 		23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */; };
-		23BEB07C270ED05500BCCA71 /* CurrencySelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */; };
+		23BEB07C270ED05500BCCA71 /* CurrencyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB07B270ED05500BCCA71 /* CurrencyTableViewController.swift */; };
 		23BEB07F270ED0FA00BCCA71 /* Veximoji in Frameworks */ = {isa = PBXBuildFile; productRef = 23BEB07E270ED0FA00BCCA71 /* Veximoji */; };
-		23BEB0822710DB2900BCCA71 /* ConversionParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB0812710DB2900BCCA71 /* ConversionParameter.swift */; };
+		23BEB0822710DB2900BCCA71 /* ConverterParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB0812710DB2900BCCA71 /* ConverterParameter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,13 +57,13 @@
 		23BEB051270E57B300BCCA71 /* GuapUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuapUITests.swift; sourceTree = "<group>"; };
 		23BEB053270E57B300BCCA71 /* GuapUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuapUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		23BEB064270E8F0C00BCCA71 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		23BEB066270E991100BCCA71 /* ConverterTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTextView.swift; sourceTree = "<group>"; };
+		23BEB066270E991100BCCA71 /* ConverterTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterTextField.swift; sourceTree = "<group>"; };
 		23BEB06B270EA6FB00BCCA71 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		23BEB071270EBACA00BCCA71 /* FiatCurrencyDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrencyDataManager.swift; sourceTree = "<group>"; };
 		23BEB074270EC72900BCCA71 /* currencies.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = currencies.json; sourceTree = "<group>"; };
 		23BEB077270EC7D900BCCA71 /* FiatCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatCurrency.swift; sourceTree = "<group>"; };
-		23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySelectorViewController.swift; sourceTree = "<group>"; };
-		23BEB0812710DB2900BCCA71 /* ConversionParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionParameter.swift; sourceTree = "<group>"; };
+		23BEB07B270ED05500BCCA71 /* CurrencyTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyTableViewController.swift; sourceTree = "<group>"; };
+		23BEB0812710DB2900BCCA71 /* ConverterParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterParameter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				23BEB064270E8F0C00BCCA71 /* PrimaryButton.swift */,
-				23BEB066270E991100BCCA71 /* ConverterTextView.swift */,
+				23BEB066270E991100BCCA71 /* ConverterTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				23BEB034270E57B100BCCA71 /* ConverterViewController.swift */,
-				23BEB07B270ED05500BCCA71 /* CurrencySelectorViewController.swift */,
+				23BEB07B270ED05500BCCA71 /* CurrencyTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -217,7 +217,7 @@
 		23BEB0802710DB0900BCCA71 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				23BEB0812710DB2900BCCA71 /* ConversionParameter.swift */,
+				23BEB0812710DB2900BCCA71 /* ConverterParameter.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -360,13 +360,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BEB035270E57B100BCCA71 /* ConverterViewController.swift in Sources */,
-				23BEB0822710DB2900BCCA71 /* ConversionParameter.swift in Sources */,
+				23BEB0822710DB2900BCCA71 /* ConverterParameter.swift in Sources */,
 				23BEB072270EBACA00BCCA71 /* FiatCurrencyDataManager.swift in Sources */,
 				23BEB06C270EA6FB00BCCA71 /* K.swift in Sources */,
 				23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */,
-				23BEB07C270ED05500BCCA71 /* CurrencySelectorViewController.swift in Sources */,
+				23BEB07C270ED05500BCCA71 /* CurrencyTableViewController.swift in Sources */,
 				23BEB078270EC7D900BCCA71 /* FiatCurrency.swift in Sources */,
-				23BEB067270E991100BCCA71 /* ConverterTextView.swift in Sources */,
+				23BEB067270E991100BCCA71 /* ConverterTextField.swift in Sources */,
 				23BEB065270E8F0C00BCCA71 /* PrimaryButton.swift in Sources */,
 				23BEB033270E57B100BCCA71 /* SceneDelegate.swift in Sources */,
 			);

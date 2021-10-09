@@ -16,21 +16,23 @@ class ConverterViewController: UIViewController {
   var targetCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "JP")!) JPY", color: .white, background: .systemGray6)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
   
-  var baseValueTextView = ConverterTextView()
-  var targetValueTextView = ConverterTextView()
+  var baseValueTextView = ConverterTextField(label: "Convert from: ")
+  var targetValueTextView = ConverterTextField(label: "Convert to: ")
   
   var baseCurrencyData: FiatCurrency? {
     didSet {
-      if let countryCode = baseCurrencyData?.iso31661, let currencyCode = baseCurrencyData?.iso4217 {
+      if let countryCode = baseCurrencyData?.iso31661, let currencyCode = baseCurrencyData?.iso4217, let currencyName = baseCurrencyData?.currencyName {
         baseCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
+        baseValueTextView.setTextFieldLabel("Convert from: \(currencyName)")
       }
     }
   }
   
   var targetCurrencyData: FiatCurrency? {
     didSet {
-      if let countryCode = baseCurrencyData?.iso31661, let currencyCode = baseCurrencyData?.iso4217 {
+      if let countryCode = targetCurrencyData?.iso31661, let currencyCode = targetCurrencyData?.iso4217, let currencyName = targetCurrencyData?.currencyName {
         targetCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
+        targetValueTextView.setTextFieldLabel("Convert to: \(currencyName)")
       }
     }
   }
@@ -46,7 +48,7 @@ class ConverterViewController: UIViewController {
     return stack
   }()
   
-  var conversionContainer: UIView = {
+  var textFieldsContainer: UIView = {
     let view = UIView()
     view.translatesAutoresizingMaskIntoConstraints = false
     return view
@@ -56,16 +58,22 @@ class ConverterViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    view.backgroundColor = .black.withAlphaComponent(0.75)
     
+    configureViewController()
+    configureTargetButton()
     applyLayouts()
     applyGestures()
   }
   
   // MARK: - Configurations
   
-  private func configureTextView() {
-    //    baseValueTextView.delegate = self
+  private func configureViewController() {
+    view.backgroundColor = .black.withAlphaComponent(0.75)
+  }
+  
+  private func configureTargetButton() {
+    targetValueTextView.isUserInteractionEnabled = false
+    
   }
   
   // MARK: - Gestures
@@ -82,10 +90,10 @@ class ConverterViewController: UIViewController {
   
   private func addCurrencySelectionGestures() {
     let tapBaseGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBaseButton))
-    let tappedTargetGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTargetButton))
+    let tapTargetGesture = UITapGestureRecognizer(target: self, action: #selector(tappedTargetButton))
     
     baseCurrencyButton.addGestureRecognizer(tapBaseGesture)
-    targetCurrencyButton.addGestureRecognizer(tappedTargetGesture)
+    targetCurrencyButton.addGestureRecognizer(tapTargetGesture)
   }
   
   // MARK: - Selectors
@@ -95,27 +103,23 @@ class ConverterViewController: UIViewController {
   }
   
   @objc func tappedBaseButton() {
-    present(createCurrencySelector(title: "Select Base Currency", type: .base), animated: true) {
-      print("Presented currency selector: input")
-    }
+    present(createCurrencySelector(title: "Select Base Currency", type: .base), animated: true)
   }
   
   @objc func tappedTargetButton() {
-    present(createCurrencySelector(title: "Select Target Currency", type: .target), animated: true) {
-      print("Presented currency selector: output")
-    }
+    present(createCurrencySelector(title: "Select Target Currency", type: .target), animated: true)
   }
   
   // MARK: - Helpers
   
-  private func createCurrencySelector(title: String, type: ConversionParameter) -> UINavigationController {
-    let rootViewController = CurrencySelectorViewController(selectionHandler: handleCurrencySelection(_:_:), type: type)
+  private func createCurrencySelector(title: String, type: ConverterParameter) -> UINavigationController {
+    let rootViewController = CurrencyTableViewController(selectionHandler: handleCurrencySelection(_:_:), type: type)
     rootViewController.title = title
     
     return UINavigationController(rootViewController: rootViewController)
   }
   
-  func handleCurrencySelection(_ data: FiatCurrency?, _ type: ConversionParameter?) {
+  func handleCurrencySelection(_ data: FiatCurrency?, _ type: ConverterParameter?) {
     guard let type = type else {
       return
     }
@@ -144,8 +148,8 @@ private extension ConverterViewController {
   func applyLayouts() {
     layoutToolbarContainer()
     layoutToolbarButtons()
-    layoutConversionContainer()
-    layoutConversionTextViews()
+    layoutTextFieldsContainer()
+    layoutTextFields()
     layoutConvertButton()
   }
   
@@ -169,29 +173,29 @@ private extension ConverterViewController {
   
   // MARK: - Text Views
   
-  func layoutConversionContainer() {
-    view.addSubview(conversionContainer)
+  func layoutTextFieldsContainer() {
+    view.addSubview(textFieldsContainer)
     
     NSLayoutConstraint.activate([
-      conversionContainer.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: K.Sizes.lgSpace),
-      conversionContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.mdSpace),
-      conversionContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.mdSpace)),
-      conversionContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(K.Sizes.convertButtonHeight + K.Sizes.lgSpace))
+      textFieldsContainer.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: (K.Sizes.lgSpace * 2)),
+      textFieldsContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.mdSpace),
+      textFieldsContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.mdSpace)),
+      textFieldsContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(K.Sizes.convertButtonHeight + K.Sizes.lgSpace))
     ])
   }
   
-  func layoutConversionTextViews() {
-    conversionContainer.addSubview(baseValueTextView)
-    conversionContainer.addSubview(targetValueTextView)
+  func layoutTextFields() {
+    textFieldsContainer.addSubview(baseValueTextView)
+    textFieldsContainer.addSubview(targetValueTextView)
     
     NSLayoutConstraint.activate([
       baseValueTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
-      baseValueTextView.widthAnchor.constraint(equalTo: conversionContainer.widthAnchor),
-      baseValueTextView.topAnchor.constraint(equalTo: conversionContainer.topAnchor),
+      baseValueTextView.widthAnchor.constraint(equalTo: textFieldsContainer.widthAnchor),
+      baseValueTextView.topAnchor.constraint(equalTo: textFieldsContainer.topAnchor),
       
       targetValueTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
-      targetValueTextView.widthAnchor.constraint(equalTo: conversionContainer.widthAnchor),
-      targetValueTextView.topAnchor.constraint(equalTo: baseValueTextView.bottomAnchor, constant: K.Sizes.mdSpace),
+      targetValueTextView.widthAnchor.constraint(equalTo: textFieldsContainer.widthAnchor),
+      targetValueTextView.topAnchor.constraint(equalTo: baseValueTextView.bottomAnchor, constant: (K.Sizes.lgSpace * 2)),
     ])
   }
   
