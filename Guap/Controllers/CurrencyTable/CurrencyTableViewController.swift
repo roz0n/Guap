@@ -12,7 +12,7 @@ class CurrencyTableViewController: UITableViewController {
   
   // MARK: - Properties
     
-  let dataManager = FiatCurrencyDataManager()
+  let dataManager = FiatDataNetworkManager()
   var selectionHandler: ((_: FiatCurrency?, _ type: ConverterParameter?) -> Void)
   var selectionType: ConverterParameter
   var currencies: [FiatCurrency]?

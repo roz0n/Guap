@@ -11,7 +11,7 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
-  let dataManager = FiatCurrencyDataManager()
+  let fiatDataManager = FiatDataNetworkManager()
   var currencies: [FiatCurrency]?
   
   var baseCurrencyButton = PrimaryButton(title: "...", color: .white, background: .systemGray6)
@@ -70,6 +70,8 @@ class ConverterViewController: UIViewController {
     configureTargetButton()
     applyLayouts()
     applyGestures()
+    
+    fiatDataManager.fetchPairConversionRate(baseCode: "USD", targetCode: "JPY")
   }
   
   // MARK: - Configurations
@@ -150,7 +152,7 @@ private extension ConverterViewController {
       return
     }
     
-    dataManager.getCurrenciesList { [weak self] data in
+    fiatDataManager.getCurrenciesList { [weak self] data in
       // TODO: Perform O(1) lookup here with a Set instead of using .first
       self?.baseCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "USD" })
       self?.targetCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "JPY" })
