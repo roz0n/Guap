@@ -38,7 +38,7 @@ class CurrencyTableViewController: UITableViewController {
     super.viewDidLoad()
     
     configureTableView()
-    fetchCurrenciesList()
+    fetchFiatCurrencies()
   }
   
   // MARK: - Configurations
@@ -83,11 +83,11 @@ extension CurrencyTableViewController {
   
 }
 
-// MARK: - Networking
+// MARK: - Data Fetching
 
 private extension CurrencyTableViewController {
   
-  func fetchCurrenciesList() {
+  func fetchFiatCurrencies() {
     guard currencies == nil else {
       return
     }

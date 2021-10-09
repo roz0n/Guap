@@ -12,8 +12,11 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
-  var baseCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "US")!) USD", color: .white, background: .systemGray6)
-  var targetCurrencyButton = PrimaryButton(title: "\(Veximoji.country(code: "JP")!) JPY", color: .white, background: .systemGray6)
+  let dataManager = FiatCurrencyDataManager()
+  var currencies: [FiatCurrency]?
+  
+  var baseCurrencyButton = PrimaryButton(title: "...", color: .white, background: .systemGray6)
+  var targetCurrencyButton = PrimaryButton(title: "...", color: .white, background: .systemGray6)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
   
   var baseValueTextView = ConverterTextField(label: "Convert from: ")
@@ -63,6 +66,7 @@ class ConverterViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    fetchFiatCurrencies()
     configureViewController()
     configureTargetButton()
     applyLayouts()
@@ -214,6 +218,25 @@ private extension ConverterViewController {
       convertButton.trailingAnchor.constraint(equalTo: toolbarContainer.trailingAnchor),
       convertButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
+  }
+  
+}
+
+// MARK: - Data Fetching
+
+private extension ConverterViewController {
+  
+  func fetchFiatCurrencies() {
+    guard currencies == nil else {
+      return
+    }
+    
+    dataManager.getCurrenciesList { [weak self] data in
+      // TODO: Perform O(1) lookup here with a Set instead of using .first
+      self?.baseCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "USD" })
+      self?.targetCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "JPY" })
+      self?.currencies = data
+    }
   }
   
 }
