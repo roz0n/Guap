@@ -55,7 +55,7 @@ class ConverterTextField: UITextField {
     backgroundColor = .systemGray5
     adjustsFontSizeToFitWidth = true
     autocorrectionType = .no
-    placeholder = "0.0"
+    placeholder = "0.00"
     leftView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
     rightView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
     leftViewMode = .always

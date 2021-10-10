@@ -67,6 +67,14 @@ class ConverterViewController: UIViewController {
     return view
   }()
   
+  var chartContainer: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.backgroundColor = .systemGray6.withAlphaComponent(0.5)
+    view.layer.cornerRadius = K.Sizes.mdRadius
+    return view
+  }()
+  
   // MARK: - Lifecycle
   
   override func viewDidLoad() {
@@ -232,7 +240,8 @@ private extension ConverterViewController {
     layoutToolbarButtons()
     layoutTextFieldsContainer()
     layoutTextFields()
-    layoutConvertButton()
+//    layoutConvertButton()
+    layoutChartContainer()
   }
   
   // MARK: - Toolbar
@@ -262,7 +271,6 @@ private extension ConverterViewController {
       textFieldsContainer.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: (K.Sizes.lgSpace * 2)),
       textFieldsContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.mdSpace),
       textFieldsContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.mdSpace)),
-      textFieldsContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(K.Sizes.convertButtonHeight + K.Sizes.lgSpace))
     ])
   }
   
@@ -278,6 +286,19 @@ private extension ConverterViewController {
       targetValueTextField.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
       targetValueTextField.widthAnchor.constraint(equalTo: textFieldsContainer.widthAnchor),
       targetValueTextField.topAnchor.constraint(equalTo: baseValueTextField.bottomAnchor, constant: (K.Sizes.lgSpace * 2)),
+      
+      textFieldsContainer.bottomAnchor.constraint(equalTo: targetValueTextField.bottomAnchor)
+    ])
+  }
+  
+  func layoutChartContainer() {
+    view.addSubview(chartContainer)
+    
+    NSLayoutConstraint.activate([
+      chartContainer.topAnchor.constraint(equalTo: textFieldsContainer.bottomAnchor, constant: K.Sizes.lgSpace),
+      chartContainer.leadingAnchor.constraint(equalTo: textFieldsContainer.leadingAnchor),
+      chartContainer.trailingAnchor.constraint(equalTo: textFieldsContainer.trailingAnchor),
+      chartContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(K.Sizes.lgSpace))
     ])
   }
   

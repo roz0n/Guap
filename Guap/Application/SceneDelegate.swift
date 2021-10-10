@@ -10,7 +10,28 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
   var window: UIWindow?
+  
+  var rootViewController: UITabBarController = {
+    let tabBarController = UITabBarController()
+    
+    // Converter
+    let converterController = ConverterViewController()
+    let converterTabImage = UIImage(systemName: "arrow.left.arrow.right", withConfiguration: UIImage.SymbolConfiguration(weight: .semibold))
+    converterController.tabBarItem = UITabBarItem(title: "Convert", image: converterTabImage, tag: 0)
+    
+    // History
+    let historyController = UIViewController()
+    let historyTabImage = UIImage(systemName: "clock.arrow.2.circlepath", withConfiguration: UIImage.SymbolConfiguration(weight: .semibold))
+    historyController.tabBarItem = UITabBarItem(title: "History", image: historyTabImage, tag: 1)
 
+    tabBarController.viewControllers = [converterController, historyController]
+    tabBarController.tabBar.backgroundImage = UIImage()
+    tabBarController.tabBar.shadowImage = UIImage()
+    tabBarController.tabBar.layer.borderColor = UIColor.clear.cgColor
+    tabBarController.tabBar.tintColor = .systemGreen
+    
+    return tabBarController
+  }()
 
   func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,7 +41,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     window = UIWindow(frame: scene.coordinateSpace.bounds)
     window?.windowScene = scene
-    window?.rootViewController = ConverterViewController()
+    window?.rootViewController = rootViewController
     window?.makeKeyAndVisible()
   }
 
