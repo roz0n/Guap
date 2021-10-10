@@ -12,6 +12,7 @@
 		2334904F2712AE4F0013DA8B /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2334904E2712AE4F0013DA8B /* Double+Ext.swift */; };
 		233490512712B0AC0013DA8B /* Locale+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233490502712B0AC0013DA8B /* Locale+Ext.swift */; };
 		233490532712CE0F0013DA8B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233490522712CE0F0013DA8B /* String+Ext.swift */; };
+		233490562712D1120013DA8B /* Charts in Frameworks */ = {isa = PBXBuildFile; productRef = 233490552712D1120013DA8B /* Charts */; };
 		23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB030270E57B100BCCA71 /* AppDelegate.swift */; };
 		23BEB033270E57B100BCCA71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB032270E57B100BCCA71 /* SceneDelegate.swift */; };
 		23BEB035270E57B100BCCA71 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB034270E57B100BCCA71 /* ConverterViewController.swift */; };
@@ -82,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				23BEB07F270ED0FA00BCCA71 /* Veximoji in Frameworks */,
+				233490562712D1120013DA8B /* Charts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +305,7 @@
 			name = Guap;
 			packageProductDependencies = (
 				23BEB07E270ED0FA00BCCA71 /* Veximoji */,
+				233490552712D1120013DA8B /* Charts */,
 			);
 			productName = Guap;
 			productReference = 23BEB02D270E57B100BCCA71 /* Guap.app */;
@@ -378,6 +381,7 @@
 			mainGroup = 23BEB024270E57B100BCCA71;
 			packageReferences = (
 				23BEB07D270ED0FA00BCCA71 /* XCRemoteSwiftPackageReference "Veximoji" */,
+				233490542712D1120013DA8B /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = 23BEB02E270E57B100BCCA71 /* Products */;
 			projectDirPath = "";
@@ -792,6 +796,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		233490542712D1120013DA8B /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/danielgindi/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		23BEB07D270ED0FA00BCCA71 /* XCRemoteSwiftPackageReference "Veximoji" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/roz0n/Veximoji";
@@ -803,6 +815,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		233490552712D1120013DA8B /* Charts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 233490542712D1120013DA8B /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = Charts;
+		};
 		23BEB07E270ED0FA00BCCA71 /* Veximoji */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 23BEB07D270ED0FA00BCCA71 /* XCRemoteSwiftPackageReference "Veximoji" */;
