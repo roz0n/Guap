@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Double {
+extension Decimal {
   
   func asCurrencyString(with locale: Locale) -> String? {
     // Formats a double to a currency string based on a given Locale
@@ -15,14 +15,16 @@ extension Double {
     
     formatter.numberStyle = .currency
     formatter.locale = locale
-    formatter.roundingMode = .halfEven
+    formatter.roundingMode = .down
+    formatter.maximumFractionDigits = 2
+    formatter.minimumFractionDigits = 2
     
     formatter.usesGroupingSeparator = true
     formatter.alwaysShowsDecimalSeparator = true
     formatter.allowsFloats = true
     formatter.generatesDecimalNumbers = true
     
-    return formatter.string(from: NSNumber(value: self))
+    return formatter.string(from: self as NSDecimalNumber)
   }
   
 }

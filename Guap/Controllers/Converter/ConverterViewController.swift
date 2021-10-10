@@ -114,20 +114,30 @@ class ConverterViewController: UIViewController {
   // MARK: - Selectors
   
   @objc func tappedConvertButton() {
+    // Obtain the user-input base currency value from the text field (which is a String)
     guard let baseValueText = baseValueTextField.text else { return }
     
-    guard let baseValue = Double(baseValueText),
-          let exchangeRate = fiatPairExchangeRateData?.data.conversionRate else { return }
+    // Convert the String to a decimal safely, that might fail so the result is Decimal?
+    guard let baseValue = baseValueText.asDecimal() else {
+      return
+    }
+    
+    // Convert the exchange rate, which is a Double, to a Decimal safely
+    guard let exchangeRateDouble = fiatPairExchangeRateData?.data.conversionRate else {
+      return
+    }
+    
+    let exchangeRate: Decimal = NSNumber(floatLiteral: exchangeRateDouble).decimalValue
     
     // Obtain conversion value, in other words, the target value
-    let conversionResult: Double = (baseValue * exchangeRate)
+    let conversionResult: Decimal = (baseValue * exchangeRate)
     
-    // At this point we either a) obtain Locales for each currency and render them as Locale-formatted strings or b) fallback to rendering the Double as a String
+    // At this point we either a) obtain Locales for each currency and render them as Locale-formatted strings or b) fallback to rendering the Decimal as a String
     // Locales require currency codes, so check if those exist (they always should) and fallback to "b" if they don't
     // This check isn't needed as it's probably safe to force-unwrap the currency data since it's coming from a static JSON, but it's best to play it safe regardless
     guard let baseCurrencyCode = baseCurrencyData?.iso4217,
           let targetCurrencyCode = targetCurrencyData?.iso4217 else {
-            targetValueTextField.text = String(conversionResult)
+            targetValueTextField.text = conversionResult.asCurrencyString(with: Locale.current)
             return
           }
     
@@ -135,15 +145,13 @@ class ConverterViewController: UIViewController {
     // If unsuccessful, fallback to "b" again
     guard let baseLocale = currentLocale.fromCurrencyCode(baseCurrencyCode, cache: &localeCache),
           let targetLocale = currentLocale.fromCurrencyCode(targetCurrencyCode, cache: &localeCache) else {
-            targetValueTextField.text = String(conversionResult)
+            targetValueTextField.text = conversionResult.asCurrencyString(with: Locale.current)
             return
           }
     
     // At this point, the Locales have been created successfully, so we can render the Locale-formatted strings
     baseValueTextField.text = baseValue.asCurrencyString(with: baseLocale)
     targetValueTextField.text = conversionResult.asCurrencyString(with: targetLocale)
-    
-    // TODO: For some reason we're losing target value decimals upon conversion. Find out why.
   }
   
   @objc func tappedBaseButton() {

@@ -11,6 +11,7 @@
 		2334904B27122D380013DA8B /* FiatExchangeRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2334904A27122D380013DA8B /* FiatExchangeRate.swift */; };
 		2334904F2712AE4F0013DA8B /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2334904E2712AE4F0013DA8B /* Double+Ext.swift */; };
 		233490512712B0AC0013DA8B /* Locale+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233490502712B0AC0013DA8B /* Locale+Ext.swift */; };
+		233490532712CE0F0013DA8B /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233490522712CE0F0013DA8B /* String+Ext.swift */; };
 		23BEB031270E57B100BCCA71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB030270E57B100BCCA71 /* AppDelegate.swift */; };
 		23BEB033270E57B100BCCA71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB032270E57B100BCCA71 /* SceneDelegate.swift */; };
 		23BEB035270E57B100BCCA71 /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEB034270E57B100BCCA71 /* ConverterViewController.swift */; };
@@ -52,6 +53,7 @@
 		2334904A27122D380013DA8B /* FiatExchangeRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiatExchangeRate.swift; sourceTree = "<group>"; };
 		2334904E2712AE4F0013DA8B /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 		233490502712B0AC0013DA8B /* Locale+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Locale+Ext.swift"; sourceTree = "<group>"; };
+		233490522712CE0F0013DA8B /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		23BEB02D270E57B100BCCA71 /* Guap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Guap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BEB030270E57B100BCCA71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		23BEB032270E57B100BCCA71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,6 +149,7 @@
 			children = (
 				2334904E2712AE4F0013DA8B /* Double+Ext.swift */,
 				233490502712B0AC0013DA8B /* Locale+Ext.swift */,
+				233490522712CE0F0013DA8B /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				2334904B27122D380013DA8B /* FiatExchangeRate.swift in Sources */,
 				23BEB035270E57B100BCCA71 /* ConverterViewController.swift in Sources */,
 				2334904F2712AE4F0013DA8B /* Double+Ext.swift in Sources */,
+				233490532712CE0F0013DA8B /* String+Ext.swift in Sources */,
 				233490512712B0AC0013DA8B /* Locale+Ext.swift in Sources */,
 				23BEB0822710DB2900BCCA71 /* ConverterParameter.swift in Sources */,
 				23BEB072270EBACA00BCCA71 /* FiatCurrencyNetworkManager.swift in Sources */,
