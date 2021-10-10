@@ -11,11 +11,13 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
-  let fiatDataManager = FiatDataNetworkManager()
+  let defaultBaseCurrency = "USD"
+  let defaultTargetCurrency = "JPY"
+  let fiatDataManager = FiatCurrencyNetworkManager()
   var currencies: [FiatCurrency]?
   
-  var baseCurrencyButton = PrimaryButton(title: "...", color: .white, background: .systemGray6)
-  var targetCurrencyButton = PrimaryButton(title: "...", color: .white, background: .systemGray6)
+  var baseCurrencyButton = PrimaryButton(title: "Base", color: .white, background: .systemGray6)
+  var targetCurrencyButton = PrimaryButton(title: "Target", color: .white, background: .systemGray6)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
   
   var baseValueTextView = ConverterTextField(label: "Convert from: ")
@@ -65,13 +67,13 @@ class ConverterViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    fetchFiatCurrencies()
     configureViewController()
     configureTargetButton()
     applyLayouts()
     applyGestures()
     
-    fiatDataManager.fetchPairConversionRate(baseCode: "USD", targetCode: "JPY")
+    fetchFiatCurrencies()
+    fetchFiatExchangeRate(baseCode: defaultBaseCurrency, targetCode: defaultTargetCurrency)
   }
   
   // MARK: - Configurations
@@ -154,9 +156,16 @@ private extension ConverterViewController {
     
     fiatDataManager.getCurrenciesList { [weak self] data in
       // TODO: Perform O(1) lookup here with a Set instead of using .first
-      self?.baseCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "USD" })
-      self?.targetCurrencyData = data?.first(where: { currencyData in currencyData.iso4217 == "JPY" })
+      self?.baseCurrencyData = data?.first(where: { [weak self] currencyData in currencyData.iso4217 == self?.defaultBaseCurrency })
+      self?.targetCurrencyData = data?.first(where: { [weak self] currencyData in currencyData.iso4217 == self?.defaultTargetCurrency })
       self?.currencies = data
+    }
+  }
+  
+  func fetchFiatExchangeRate(baseCode: String, targetCode: String) {
+    fiatDataManager.fetchPairExchangeRate(baseCode: baseCode, targetCode: targetCode) { responseData in
+      print("Got conversion data")
+      print(responseData)
     }
   }
   

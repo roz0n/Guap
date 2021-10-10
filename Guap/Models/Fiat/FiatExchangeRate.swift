@@ -14,7 +14,7 @@ struct FiatExchangeRateBody: Codable {
   var targetCode: String
 }
 
-struct FiatExchangeRateResponse: Codable {
+struct FiatExchangeRateData: Codable {
   var baseCode: String
   var targetCode: String
   var conversionRate: Decimal
@@ -22,8 +22,8 @@ struct FiatExchangeRateResponse: Codable {
 
 // MARK: - API Responses
 
-struct FiatExchangeRateResponseData: Codable {
+struct FiatExchangeRateResponse: Codable {
   var success: Bool
-  var data: FiatExchangeRateResponse
+  var data: FiatExchangeRateData
   var error: Bool?
 }

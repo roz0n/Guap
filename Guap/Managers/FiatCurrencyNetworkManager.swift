@@ -1,5 +1,5 @@
 //
-//  FiatDataNetworkManager.swift
+//  FiatCurrencyNetworkManager.swift
 //  Guap
 //
 //  Created by Arnaldo Rozon on 10/7/21.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class FiatDataNetworkManager {
+class FiatCurrencyNetworkManager {
   
   // MARK: - Types
   
@@ -90,7 +90,7 @@ class FiatDataNetworkManager {
   
   // MARK: - Networking
   
-  func fetchPairConversionRate(baseCode: String, targetCode: String, completion: @escaping (_ responseData: Result<FiatExchangeRateResponseData, NetworkManagerErrors>) -> Void) {
+  func fetchPairExchangeRate(baseCode: String, targetCode: String, completion: @escaping (_ responseData: Result<FiatExchangeRateResponse, NetworkManagerErrors>) -> Void) {
     guard let requestUrl = URL(string: "https://8c4e-2601-241-8c01-2ff0-3106-9534-bad8-f013.ngrok.io/fiat/pair") else {
       return
     }
@@ -116,7 +116,7 @@ class FiatDataNetworkManager {
       }
       
       do {
-        let decodedData = try self?.decoder.decode(FiatExchangeRateResponseData.self, from: data)
+        let decodedData = try self?.decoder.decode(FiatExchangeRateResponse.self, from: data)
         
         guard let decodedData = decodedData else {
           throw NetworkManagerErrors.dataError
