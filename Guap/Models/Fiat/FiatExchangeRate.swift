@@ -17,7 +17,7 @@ struct FiatExchangeRateBody: Codable {
 struct FiatExchangeRateData: Codable {
   var baseCode: String
   var targetCode: String
-  var conversionRate: Decimal
+  var conversionRate: Double
 }
 
 // MARK: - API Responses

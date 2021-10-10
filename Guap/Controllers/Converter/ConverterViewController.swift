@@ -11,17 +11,22 @@ class ConverterViewController: UIViewController {
   
   // MARK: - Properties
   
+  let currentLocale = Locale.current
+  private lazy var localeCache: [String: Locale]? = [:]
+  
   let defaultBaseCurrency = "USD"
   let defaultTargetCurrency = "JPY"
-  let fiatDataManager = FiatCurrencyNetworkManager()
-  var currencies: [FiatCurrency]?
   
   var baseCurrencyButton = PrimaryButton(title: "Base", color: .white, background: .systemGray6)
   var targetCurrencyButton = PrimaryButton(title: "Target", color: .white, background: .systemGray6)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
   
-  var baseValueTextView = ConverterTextField(label: "Convert from: ")
-  var targetValueTextView = ConverterTextField(label: "Convert to: ")
+  var baseValueTextField = ConverterTextField(label: "Convert from: ")
+  var targetValueTextField = ConverterTextField(label: "Convert to: ")
+  
+  var currencies: [FiatCurrency]?
+  let fiatDataManager = FiatCurrencyNetworkManager()
+  var fiatPairExchangeRateData: FiatExchangeRateResponse?
   
   var baseCurrencyData: FiatCurrency? {
     didSet {
@@ -29,7 +34,7 @@ class ConverterViewController: UIViewController {
          let currencyCode = baseCurrencyData?.iso4217,
          let currencyName = baseCurrencyData?.currencyName {
         baseCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
-        baseValueTextView.setTextFieldLabel("Convert from: \(currencyName)")
+        baseValueTextField.setTextFieldLabel("Convert from: \(currencyName)")
       }
     }
   }
@@ -40,7 +45,7 @@ class ConverterViewController: UIViewController {
          let currencyCode = targetCurrencyData?.iso4217,
          let currencyName = targetCurrencyData?.currencyName {
         targetCurrencyButton.setButtonTitle(countryCode: countryCode, currencyCode: currencyCode)
-        targetValueTextView.setTextFieldLabel("Convert to: \(currencyName)")
+        targetValueTextField.setTextFieldLabel("Convert to: \(currencyName)")
       }
     }
   }
@@ -72,8 +77,7 @@ class ConverterViewController: UIViewController {
     applyLayouts()
     applyGestures()
     
-    fetchFiatCurrencies()
-    fetchFiatExchangeRate(baseCode: defaultBaseCurrency, targetCode: defaultTargetCurrency)
+    fetchInitialFiatData()
   }
   
   // MARK: - Configurations
@@ -83,7 +87,7 @@ class ConverterViewController: UIViewController {
   }
   
   private func configureTargetButton() {
-    targetValueTextView.isUserInteractionEnabled = false
+    targetValueTextField.isUserInteractionEnabled = false
     
   }
   
@@ -110,7 +114,36 @@ class ConverterViewController: UIViewController {
   // MARK: - Selectors
   
   @objc func tappedConvertButton() {
-    print("Convert button tapped")
+    guard let baseValueText = baseValueTextField.text else { return }
+    
+    guard let baseValue = Double(baseValueText),
+          let exchangeRate = fiatPairExchangeRateData?.data.conversionRate else { return }
+    
+    // Obtain conversion value, in other words, the target value
+    let conversionResult: Double = (baseValue * exchangeRate)
+    
+    // At this point we either a) obtain Locales for each currency and render them as Locale-formatted strings or b) fallback to rendering the Double as a String
+    // Locales require currency codes, so check if those exist (they always should) and fallback to "b" if they don't
+    // This check isn't needed as it's probably safe to force-unwrap the currency data since it's coming from a static JSON, but it's best to play it safe regardless
+    guard let baseCurrencyCode = baseCurrencyData?.iso4217,
+          let targetCurrencyCode = targetCurrencyData?.iso4217 else {
+            targetValueTextField.text = String(conversionResult)
+            return
+          }
+    
+    // Create the designated Locale objects
+    // If unsuccessful, fallback to "b" again
+    guard let baseLocale = currentLocale.fromCurrencyCode(baseCurrencyCode, cache: &localeCache),
+          let targetLocale = currentLocale.fromCurrencyCode(targetCurrencyCode, cache: &localeCache) else {
+            targetValueTextField.text = String(conversionResult)
+            return
+          }
+    
+    // At this point, the Locales have been created successfully, so we can render the Locale-formatted strings
+    baseValueTextField.text = baseValue.asCurrencyString(with: baseLocale)
+    targetValueTextField.text = conversionResult.asCurrencyString(with: targetLocale)
+    
+    // TODO: For some reason we're losing target value decimals upon conversion. Find out why.
   }
   
   @objc func tappedBaseButton() {
@@ -149,6 +182,12 @@ class ConverterViewController: UIViewController {
 
 private extension ConverterViewController {
   
+  func fetchInitialFiatData() {
+    // This will fetch the initial list of fiat currencies and the exchange rate of the default pair
+    fetchFiatCurrencies()
+    fetchFiatExchangeRate(baseCode: defaultBaseCurrency, targetCode: defaultTargetCurrency)
+  }
+  
   func fetchFiatCurrencies() {
     guard currencies == nil else {
       return
@@ -163,9 +202,14 @@ private extension ConverterViewController {
   }
   
   func fetchFiatExchangeRate(baseCode: String, targetCode: String) {
-    fiatDataManager.fetchPairExchangeRate(baseCode: baseCode, targetCode: targetCode) { responseData in
-      print("Got conversion data")
-      print(responseData)
+    fiatDataManager.fetchPairExchangeRate(baseCode: baseCode, targetCode: targetCode) { [weak self] result in
+      switch result {
+        case .success(let responseData):
+          self?.fiatPairExchangeRateData = responseData
+        case .failure(let error):
+          print("Error fetching fiat pair exchange rate:")
+          print(error)
+      }
     }
   }
   
@@ -215,17 +259,17 @@ private extension ConverterViewController {
   }
   
   func layoutTextFields() {
-    textFieldsContainer.addSubview(baseValueTextView)
-    textFieldsContainer.addSubview(targetValueTextView)
+    textFieldsContainer.addSubview(baseValueTextField)
+    textFieldsContainer.addSubview(targetValueTextField)
     
     NSLayoutConstraint.activate([
-      baseValueTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
-      baseValueTextView.widthAnchor.constraint(equalTo: textFieldsContainer.widthAnchor),
-      baseValueTextView.topAnchor.constraint(equalTo: textFieldsContainer.topAnchor),
+      baseValueTextField.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
+      baseValueTextField.widthAnchor.constraint(equalTo: textFieldsContainer.widthAnchor),
+      baseValueTextField.topAnchor.constraint(equalTo: textFieldsContainer.topAnchor),
       
-      targetValueTextView.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
-      targetValueTextView.widthAnchor.constraint(equalTo: textFieldsContainer.widthAnchor),
-      targetValueTextView.topAnchor.constraint(equalTo: baseValueTextView.bottomAnchor, constant: (K.Sizes.lgSpace * 2)),
+      targetValueTextField.heightAnchor.constraint(equalToConstant: K.Sizes.inputTextViewHeight),
+      targetValueTextField.widthAnchor.constraint(equalTo: textFieldsContainer.widthAnchor),
+      targetValueTextField.topAnchor.constraint(equalTo: baseValueTextField.bottomAnchor, constant: (K.Sizes.lgSpace * 2)),
     ])
   }
   

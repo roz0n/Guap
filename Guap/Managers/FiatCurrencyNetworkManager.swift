@@ -99,7 +99,7 @@ class FiatCurrencyNetworkManager {
       return
     }
     
-    URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+    let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
       if let _ = error {
         completion(.failure(.sessionError))
         return
@@ -123,12 +123,12 @@ class FiatCurrencyNetworkManager {
         }
         
         completion(.success(decodedData))
-      } catch let error {
-        print("Error: unable to decode fiat exchange rate response")
-        print(error)
+      } catch {
         completion(.failure(.decodeError))
       }
-    }.resume()
+    }
+    
+    task.resume()
   }
   
 }
