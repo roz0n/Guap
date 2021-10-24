@@ -52,6 +52,12 @@ class ConverterViewController: UIViewController {
   
   // MARK: -
   
+  var contentContainer: UIView = {
+    let view = UIView()
+    view.translatesAutoresizingMaskIntoConstraints = false
+    return view
+  }()
+  
   var toolbarContainer: UIStackView = {
     let stack = UIStackView()
     stack.translatesAutoresizingMaskIntoConstraints = false
@@ -82,6 +88,8 @@ class ConverterViewController: UIViewController {
     
     configureViewController()
     configureTargetButton()
+    configureConverterTextField()
+    
     applyLayouts()
     applyGestures()
     
@@ -96,7 +104,11 @@ class ConverterViewController: UIViewController {
   
   private func configureTargetButton() {
     targetValueTextField.isUserInteractionEnabled = false
-    
+  }
+  
+  private func configureConverterTextField() {
+    NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShown), name: UIResponder.keyboardDidShowNotification, object: nil)
+    NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHidden), name: UIResponder.keyboardDidHideNotification, object: nil)
   }
   
   // MARK: - Gestures
@@ -120,6 +132,14 @@ class ConverterViewController: UIViewController {
   }
   
   // MARK: - Selectors
+    
+  @objc func handleKeyboardShown(notification: NSNotification) {
+    print("Keyboard shown")
+  }
+  
+  @objc func handleKeyboardHidden(notification: NSNotification) {
+    print("Keyboard hidden")
+  }
   
   @objc func tappedConvertButton() {
     // Obtain the user-input base currency value from the text field (which is a String)
@@ -236,23 +256,36 @@ private extension ConverterViewController {
 private extension ConverterViewController {
   
   func applyLayouts() {
+    layoutContentContainer()
     layoutToolbarContainer()
     layoutToolbarButtons()
     layoutTextFieldsContainer()
     layoutTextFields()
-//    layoutConvertButton()
+    //    layoutConvertButton()
     layoutChartContainer()
   }
   
   // MARK: - Toolbar
   
-  func layoutToolbarContainer() {
-    view.addSubview(toolbarContainer)
+  func layoutContentContainer() {
+    view.addSubview(contentContainer)
     
     NSLayoutConstraint.activate([
-      toolbarContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: K.Sizes.mdSpace),
-      toolbarContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.mdSpace),
-      toolbarContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.mdSpace)),
+      contentContainer.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+      contentContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+      contentContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+      contentContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+    ])
+  }
+  
+  
+  func layoutToolbarContainer() {
+    contentContainer.addSubview(toolbarContainer)
+    
+    NSLayoutConstraint.activate([
+      toolbarContainer.topAnchor.constraint(equalTo: contentContainer.topAnchor, constant: K.Sizes.mdSpace),
+      toolbarContainer.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: K.Sizes.mdSpace),
+      toolbarContainer.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -(K.Sizes.mdSpace)),
       toolbarContainer.heightAnchor.constraint(equalToConstant: K.Sizes.primaryToolbarHeight)
     ])
   }
@@ -265,12 +298,12 @@ private extension ConverterViewController {
   // MARK: - Text Views
   
   func layoutTextFieldsContainer() {
-    view.addSubview(textFieldsContainer)
+    contentContainer.addSubview(textFieldsContainer)
     
     NSLayoutConstraint.activate([
       textFieldsContainer.topAnchor.constraint(equalTo: toolbarContainer.bottomAnchor, constant: (K.Sizes.lgSpace * 2)),
-      textFieldsContainer.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: K.Sizes.mdSpace),
-      textFieldsContainer.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -(K.Sizes.mdSpace)),
+      textFieldsContainer.leadingAnchor.constraint(equalTo: contentContainer.leadingAnchor, constant: K.Sizes.mdSpace),
+      textFieldsContainer.trailingAnchor.constraint(equalTo: contentContainer.trailingAnchor, constant: -(K.Sizes.mdSpace)),
     ])
   }
   
@@ -292,26 +325,26 @@ private extension ConverterViewController {
   }
   
   func layoutChartContainer() {
-    view.addSubview(chartContainer)
+    contentContainer.addSubview(chartContainer)
     
     NSLayoutConstraint.activate([
       chartContainer.topAnchor.constraint(equalTo: textFieldsContainer.bottomAnchor, constant: K.Sizes.lgSpace),
       chartContainer.leadingAnchor.constraint(equalTo: textFieldsContainer.leadingAnchor),
       chartContainer.trailingAnchor.constraint(equalTo: textFieldsContainer.trailingAnchor),
-      chartContainer.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -(K.Sizes.lgSpace))
+      chartContainer.bottomAnchor.constraint(equalTo: contentContainer.bottomAnchor, constant: -(K.Sizes.lgSpace))
     ])
   }
   
   // MARK: - Convert Button
   
   func layoutConvertButton() {
-    view.addSubview(convertButton)
+    contentContainer.addSubview(convertButton)
     
     NSLayoutConstraint.activate([
       convertButton.heightAnchor.constraint(equalToConstant: K.Sizes.convertButtonHeight),
       convertButton.leadingAnchor.constraint(equalTo: toolbarContainer.leadingAnchor),
       convertButton.trailingAnchor.constraint(equalTo: toolbarContainer.trailingAnchor),
-      convertButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+      convertButton.bottomAnchor.constraint(equalTo: contentContainer.bottomAnchor)
     ])
   }
   

@@ -132,6 +132,7 @@
 		23349047271178610013DA8B /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				23BEB0802710DB0900BCCA71 /* Types */,
 				23BEB063270E8C2B00BCCA71 /* Views */,
 			);
 			path = Shared;
@@ -180,7 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				2334904D2712AE3A0013DA8B /* Extensions */,
-				23BEB0802710DB0900BCCA71 /* Types */,
 				23BEB076270EC7C500BCCA71 /* Models */,
 				23BEB073270EC6F200BCCA71 /* Data */,
 				23BEB070270EBAAF00BCCA71 /* Managers */,

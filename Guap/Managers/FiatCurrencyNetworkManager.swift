@@ -91,7 +91,7 @@ class FiatCurrencyNetworkManager {
   // MARK: - Networking
   
   func fetchPairExchangeRate(baseCode: String, targetCode: String, completion: @escaping (_ responseData: Result<FiatExchangeRateResponse, NetworkManagerErrors>) -> Void) {
-    guard let requestUrl = URL(string: "https://8c4e-2601-241-8c01-2ff0-3106-9534-bad8-f013.ngrok.io/fiat/pair") else {
+    guard let requestUrl = URL(string: "https://4664-2601-241-8c01-2ff0-d157-318f-aefb-a159.ngrok.io/fiat/pair") else {
       return
     }
     
