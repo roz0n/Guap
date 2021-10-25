@@ -11,6 +11,8 @@ class ConverterTextField: UITextField {
   
   // MARK: - Properties
   
+  var textFieldType: ConverterTextFields
+  
   var keyboardToolbar: UIToolbar? = nil
   var keyboardDoneButton: UIBarButtonItem? = nil
   var keyboardCancelButton: UIBarButtonItem? = nil
@@ -32,13 +34,16 @@ class ConverterTextField: UITextField {
   
   // MARK: - Initializers
   
-  init(label: String) {
+  init(label: String, type: ConverterTextFields) {
     textFieldLabelText = label
+    textFieldType = type
+    
     super.init(frame: .zero)
-    translatesAutoresizingMaskIntoConstraints = false
+    
     configureTextField()
     configureTextFieldLabel()
     configureKeyboard()
+    
     applyLayouts()
   }
   
@@ -49,17 +54,13 @@ class ConverterTextField: UITextField {
   // MARK: - Configurations
   
   private func configureTextField() {
-    font = UIFont.monospacedSystemFont(ofSize: K.Sizes.xlText, weight: .bold)
+    translatesAutoresizingMaskIntoConstraints = false
     keyboardType = .decimalPad
-    layer.cornerRadius = K.Sizes.mdRadius
-    backgroundColor = .systemGray5
     adjustsFontSizeToFitWidth = true
     autocorrectionType = .no
-    placeholder = "0.00"
-    leftView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
-    rightView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
-    leftViewMode = .always
-    rightViewMode = .always
+    
+    
+    setTextFieldAppearance()
   }
   
   private func configureTextFieldLabel() {
@@ -76,8 +77,8 @@ class ConverterTextField: UITextField {
     guard let toolbar = keyboardToolbar,
           let doneButton = keyboardDoneButton,
           let cancelButton = keyboardCancelButton else {
-      return
-    }
+            return
+          }
     
     toolbar.barStyle = .default
     toolbar.sizeToFit()
@@ -105,6 +106,29 @@ class ConverterTextField: UITextField {
   
   func setTextFieldLabel(_ text: String) {
     textFieldLabelText = text.uppercased()
+  }
+  
+  func setTextFieldAppearance() {
+    switch textFieldType {
+      case .base:
+        let placeholderString = NSAttributedString(string: "0.00", attributes: [.foregroundColor: UIColor.white])
+        attributedPlaceholder = placeholderString
+        
+        backgroundColor = .clear
+        layer.borderWidth = 4
+        layer.borderColor = UIColor.white.cgColor
+      case .target:
+        placeholder = "0.00"
+        backgroundColor = .systemGray5
+    }
+    
+    font = UIFont.monospacedSystemFont(ofSize: K.Sizes.xlText, weight: .bold)
+    layer.cornerRadius = K.Sizes.mdRadius
+    
+    leftView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
+    rightView = UIView(frame: CGRect(x: 0, y: 0, width: K.Sizes.lgSpace, height: .leastNonzeroMagnitude))
+    leftViewMode = .always
+    rightViewMode = .always
   }
   
 }

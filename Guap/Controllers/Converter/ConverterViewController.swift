@@ -21,8 +21,8 @@ class ConverterViewController: UIViewController {
   var targetCurrencyButton = PrimaryButton(title: "Target", color: .white, background: .systemGray6)
   var convertButton = PrimaryButton(title: K.Labels.convertButton, color: .white, background: .systemGreen)
   
-  var baseValueTextField = ConverterTextField(label: "Convert from: ")
-  var targetValueTextField = ConverterTextField(label: "Convert to: ")
+  var baseValueTextField = ConverterTextField(label: "Convert from: ", type: .base)
+  var targetValueTextField = ConverterTextField(label: "Convert to: ", type: .target)
   
   var currencies: [FiatCurrency]?
   let fiatDataManager = FiatCurrencyNetworkManager()
@@ -91,7 +91,8 @@ class ConverterViewController: UIViewController {
     configureViewController()
     configureBlocks()
     configureTargetButton()
-    configureConverterTextField()
+    configureBaseValueTextField()
+    configureTextFieldNotifications()
     
     applyLayouts()
     applyGestures()
@@ -113,9 +114,14 @@ class ConverterViewController: UIViewController {
     targetValueTextField.isUserInteractionEnabled = false
   }
   
-  private func configureConverterTextField() {
+  private func configureTextFieldNotifications() {
     NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShown), name: UIResponder.keyboardDidShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHidden), name: UIResponder.keyboardDidHideNotification, object: nil)
+  }
+  
+  private func configureBaseValueTextField() {
+    baseValueTextField.delegate = self
+    baseValueTextField.addTarget(self, action: #selector(baseValueTextFieldDidChange(_:)), for: .editingChanged)
   }
   
   private func configureCurrencyTableDismissHandler() {
@@ -160,12 +166,15 @@ class ConverterViewController: UIViewController {
     print("Keyboard hidden")
   }
   
-  @objc func tappedConvertButton() {
+  // TODO: Move this method into the FiatCurrencyConversionManager as it no longer needs to be a selector
+  // Also, it could be split up into a couple of methods, for example, updating the text fields at the end makes this function less reusable and creates repition inside the delegate
+  
+  @objc func tappedConvertButton(shouldUpdateBaseField: Bool) {
     // Obtain the user-input base currency value from the text field (which is a String)
     guard let baseValueText = baseValueTextField.text else { return }
     
     // Convert the String to a decimal safely, that might fail so the result is Decimal?
-    guard let baseValue = baseValueText.asDecimal() else {
+    guard let baseValue = baseValueText.convertToDecimal() else {
       return
     }
     
@@ -197,7 +206,11 @@ class ConverterViewController: UIViewController {
           }
     
     // At this point, the Locales have been created successfully, so we can render the Locale-formatted strings
-    baseValueTextField.text = baseValue.asCurrencyString(with: baseLocale)
+    
+    if shouldUpdateBaseField == true {
+      baseValueTextField.text = baseValue.asCurrencyString(with: baseLocale)
+    }
+    
     targetValueTextField.text = conversionResult.asCurrencyString(with: targetLocale)
   }
   
@@ -209,6 +222,14 @@ class ConverterViewController: UIViewController {
   @objc func tappedTargetButton() {
     let selectorViewController = createCurrencySelector(title: "Select Target Currency", type: .target, dismiss: currencyTableDismissHandler)
     present(selectorViewController, animated: true)
+  }
+  
+  @objc func baseValueTextFieldDidChange(_ textField: UITextField) {
+    if textField.text == nil || textField.text == "" {
+      targetValueTextField.text = nil
+    } else {
+      tappedConvertButton(shouldUpdateBaseField: false)
+    }
   }
   
   // MARK: - Helpers
@@ -272,6 +293,33 @@ private extension ConverterViewController {
           print(error)
       }
     }
+  }
+  
+}
+
+// MARK: - UITextFieldDelegate
+
+extension ConverterViewController: UITextFieldDelegate {
+  
+  func textFieldDidBeginEditing(_ textField: UITextField) {
+    guard let text = textField.text, let baseCurrencyCode = baseCurrencyData?.iso4217 else { return }
+    
+    guard let locale = currentLocale.fromCurrencyCode(baseCurrencyCode, cache: &localeCache) else {
+      return
+    }
+    
+    if text != "" {
+      let decimalValue = text.convertFromCurrencyToDecimal(with: locale)
+      
+      if let decimalValue = decimalValue {
+        baseValueTextField.text = decimalValue.asDecimalString()
+      }
+    }
+  }
+  
+  func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+    print("Did finish editing field")
+    tappedConvertButton(shouldUpdateBaseField: true)
   }
   
 }

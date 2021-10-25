@@ -1,5 +1,5 @@
 //
-//  Double+Ext.swift
+//  Decimal+Ext.swift
 //  Guap
 //
 //  Created by Arnaldo Rozon on 10/10/21.
@@ -25,6 +25,10 @@ extension Decimal {
     formatter.generatesDecimalNumbers = true
     
     return formatter.string(from: self as NSDecimalNumber)
+  }
+  
+  func asDecimalString() -> String {
+    return NSDecimalNumber(decimal: self).stringValue
   }
   
 }
