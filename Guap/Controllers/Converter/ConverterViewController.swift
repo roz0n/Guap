@@ -28,6 +28,8 @@ class ConverterViewController: UIViewController {
   let fiatDataManager = FiatCurrencyNetworkManager()
   var fiatPairExchangeRateData: FiatExchangeRateResponse?
   
+  var currencyTableDismissHandler: (() -> Void)?
+  
   var baseCurrencyData: FiatCurrency? {
     didSet {
       if let countryCode = baseCurrencyData?.iso31661,
@@ -87,6 +89,7 @@ class ConverterViewController: UIViewController {
     super.viewDidLoad()
     
     configureViewController()
+    configureBlocks()
     configureTargetButton()
     configureConverterTextField()
     
@@ -102,6 +105,10 @@ class ConverterViewController: UIViewController {
     view.backgroundColor = .black.withAlphaComponent(0.75)
   }
   
+  private func configureBlocks() {
+    configureCurrencyTableDismissHandler()
+  }
+  
   private func configureTargetButton() {
     targetValueTextField.isUserInteractionEnabled = false
   }
@@ -109,6 +116,18 @@ class ConverterViewController: UIViewController {
   private func configureConverterTextField() {
     NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardShown), name: UIResponder.keyboardDidShowNotification, object: nil)
     NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardHidden), name: UIResponder.keyboardDidHideNotification, object: nil)
+  }
+  
+  private func configureCurrencyTableDismissHandler() {
+    currencyTableDismissHandler = { [weak self] in
+      guard let baseCurrencyData = self?.baseCurrencyData, let targetCurrencyData = self?.targetCurrencyData else {
+        return
+      }
+      
+      self?.fetchFiatExchangeRate(baseCode: baseCurrencyData.iso4217, targetCode: targetCurrencyData.iso4217)
+      
+      print("Dismissed vc")
+    }
   }
   
   // MARK: - Gestures
@@ -132,7 +151,7 @@ class ConverterViewController: UIViewController {
   }
   
   // MARK: - Selectors
-    
+  
   @objc func handleKeyboardShown(notification: NSNotification) {
     print("Keyboard shown")
   }
@@ -183,18 +202,24 @@ class ConverterViewController: UIViewController {
   }
   
   @objc func tappedBaseButton() {
-    present(createCurrencySelector(title: "Select Base Currency", type: .base), animated: true)
+    let selectorViewController = createCurrencySelector(title: "Select Base Currency", type: .base, dismiss: currencyTableDismissHandler)
+    present(selectorViewController, animated: true)
   }
   
   @objc func tappedTargetButton() {
-    present(createCurrencySelector(title: "Select Target Currency", type: .target), animated: true)
+    let selectorViewController = createCurrencySelector(title: "Select Target Currency", type: .target, dismiss: currencyTableDismissHandler)
+    present(selectorViewController, animated: true)
   }
   
   // MARK: - Helpers
   
-  private func createCurrencySelector(title: String, type: ConverterParameter) -> UINavigationController {
+  private func createCurrencySelector(title: String, type: ConverterParameter, dismiss dismissHandler: (() -> Void)?) -> UINavigationController {
     let rootViewController = CurrencyTableViewController(selectionHandler: handleCurrencySelection(_:_:), type: type)
     rootViewController.title = title
+    
+    if let dismissHandler = dismissHandler {
+      rootViewController.dismissHandler = dismissHandler
+    }
     
     return UINavigationController(rootViewController: rootViewController)
   }

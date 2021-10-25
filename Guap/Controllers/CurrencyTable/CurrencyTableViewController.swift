@@ -16,6 +16,7 @@ class CurrencyTableViewController: UITableViewController {
   var selectionHandler: ((_: FiatCurrency?, _ type: ConverterParameter?) -> Void)
   var selectionType: ConverterParameter
   var currencies: [FiatCurrency]?
+  var dismissHandler: (() -> Void)?
   
   // MARK: - Initializers
   
@@ -81,6 +82,10 @@ extension CurrencyTableViewController {
     
     dismiss(animated: true) { [weak self] in
       self?.selectionHandler(data, self?.selectionType)
+      
+      if let dismissHandler = self?.dismissHandler {
+        dismissHandler()
+      }
     }
   }
   
